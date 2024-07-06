@@ -1,0 +1,217 @@
+{
+    "id": "d474bbbd-5959-4a77-9dc0-a5b8fa4a11fe",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Level",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "prefabId": "41c20759-6986-420d-b99c-44f4d40b476c",
+            "id": "642662fe-e52a-4881-abe5-0b8c437c53fa",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "uiLayer",
+            "x": 1,
+            "y": 1
+        },
+        {
+            "type": "Text",
+            "id": "50ba1343-d270-40d7-b787-8e70aff6e371",
+            "label": "text_option_B",
+            "x": 1337,
+            "y": 387,
+            "text": "Opção B",
+            "paddingLeft": 10,
+            "paddingTop": 10,
+            "paddingRight": 10,
+            "paddingBottom": 10,
+            "fontSize": "50px",
+            "backgroundColor": "#009bc1ff",
+            "shadow.stroke": true,
+            "shadow.color": "#fff",
+            "list": [
+                {
+                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                    "id": "d7e7055f-d26c-4d57-ac01-f027585423b4",
+                    "label": "onPointerDownScript",
+                    "list": [
+                        {
+                            "prefabId": "757fdd95-b5cc-4c5b-adef-a26b5965d851",
+                            "id": "6f41c477-cb6f-4b11-b4f0-4b6d626bf272",
+                            "unlock": [
+                                "eventName",
+                                "eventEmitter"
+                            ],
+                            "label": "emitEventActionScript",
+                            "eventName": "selectB",
+                            "eventEmitter": "scene.events"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Text",
+            "id": "20e28896-0e2a-44dd-897c-4cd0963852bf",
+            "label": "text_option_A",
+            "x": 406,
+            "y": 392,
+            "text": "Opção A",
+            "paddingLeft": 10,
+            "paddingTop": 10,
+            "paddingRight": 10,
+            "paddingBottom": 10,
+            "fontSize": "50px",
+            "backgroundColor": "#ff911aff",
+            "list": [
+                {
+                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                    "id": "9f582e52-3eba-4191-97b4-1a0e442b12bc",
+                    "label": "onPointerDownScript_1",
+                    "list": [
+                        {
+                            "prefabId": "757fdd95-b5cc-4c5b-adef-a26b5965d851",
+                            "id": "50bba1bb-a869-46b9-a5e1-a7064310f939",
+                            "unlock": [
+                                "eventName",
+                                "eventEmitter"
+                            ],
+                            "label": "emitEventActionScript_1",
+                            "eventName": "selectA",
+                            "eventEmitter": "scene.events"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Rectangle",
+            "id": "21a115c6-e472-4903-bb2b-58cfd91779f5",
+            "label": "decisao_fundo",
+            "x": 985,
+            "y": 207,
+            "scaleX": 4.212742875775465,
+            "scaleY": 2.8391363745211793,
+            "isFilled": true,
+            "width": 215,
+            "height": 128
+        },
+        {
+            "type": "Text",
+            "id": "56040518-c6a6-4149-8512-a288dd5091f1",
+            "label": "decisao_titulo",
+            "x": 698,
+            "y": 107,
+            "text": "Título da Decisão",
+            "fontSize": "45px",
+            "color": "#000000ff",
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "e1f03093-4675-43f7-aebf-cedd7532b6f2",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onUpdateCard",
+                    "eventName": "update-card-title",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "bfbbe5ee-7aa2-4f38-9b31-777c6df483d3",
+                            "id": "ff9a1c17-d68e-43c9-8555-59c0c9286c40",
+                            "label": "updateTextAction"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Text",
+            "id": "13010f7f-71fa-4b8f-9147-8e5cfc2ddd27",
+            "label": "decisao_texto",
+            "x": 654,
+            "y": 205,
+            "text": "Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit. \nInteger molestie tortor nisi, \n",
+            "fontSize": "35px",
+            "color": "#000000ff",
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "cc919bde-9f62-4d78-9be2-6d1c816e9dce",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onUpdateCard_1",
+                    "eventName": "update-card-text",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "bfbbe5ee-7aa2-4f38-9b31-777c6df483d3",
+                            "id": "0de7ac26-221a-4ad3-bca8-f31bc31437d7",
+                            "label": "updateTextAction_1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "prefabId": "d8801a27-29ff-4774-a8a6-1f4e9b14d6cc",
+            "id": "789d2f54-a153-406e-a5e6-cf5e700681e3",
+            "label": "gameplayScript",
+            "nestedPrefabs": [
+                {
+                    "prefabId": "6d1b76e2-9d92-41b8-a055-a3c984f170d9",
+                    "id": "97bff27a-2f63-4ba9-90b9-dbf5b2cb870c",
+                    "label": "textures",
+                    "list": [
+                        {
+                            "prefabId": "d220abfa-d1cb-4c05-9ac3-e95aa746651b",
+                            "id": "c876249a-a4e4-4f80-8aa2-944104907523",
+                            "unlock": [
+                                "texture"
+                            ],
+                            "label": "yellow",
+                            "texture": "{\"key\":\"star-yellow\"}"
+                        },
+                        {
+                            "prefabId": "d220abfa-d1cb-4c05-9ac3-e95aa746651b",
+                            "id": "af1f0b0e-d90e-4c97-b4a5-f81a677d7233",
+                            "unlock": [
+                                "texture"
+                            ],
+                            "label": "orange",
+                            "texture": "{\"key\":\"star-orange\"}"
+                        },
+                        {
+                            "prefabId": "d220abfa-d1cb-4c05-9ac3-e95aa746651b",
+                            "id": "70000062-e4da-483a-9581-2d845ca86de2",
+                            "unlock": [
+                                "texture"
+                            ],
+                            "label": "green",
+                            "texture": "{\"key\":\"star-green\"}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}
