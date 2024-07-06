@@ -1,10 +1,9 @@
-# A day in the beach, an example game
+# Simulador de Herdeiro de Latifúndio
 
 An example game made with Phaser Editor 2D. Based on Phaser 3, Webpack 5, TypeScript, and Phaser Editor 2D v3.
 
-![screenshot](.github/a-day-in-the-beach-screenshot.png)
 
-[You play the game here](https://phaserjs.github.io/editor-starter-example-a-day-in-the-beach/)
+[You play the game here](https://danlessa.github.io/bird-game-jam-2024/)
 
 ## First steps
 
@@ -87,4 +86,4 @@ You can add your own script nodes to the `src/script-nodes` folder.
 
 ## Author
 
-Created and maintained by the Phaser Editor 2D team.
+Created and maintained by Danilo, Gregório and Fernando
