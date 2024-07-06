@@ -26,14 +26,17 @@ export default class Level extends Phaser.Scene {
 
 	editorCreate(): void {
 
+		// image_1
+		this.add.image(960, 540, "fundo-teste");
+
 		// uiLayer
 		const uiLayer = new UILayerPrefab(this, 1, 1);
 		this.add.existing(uiLayer);
 
 		// text_option_B
-		const text_option_B = this.add.text(1337, 387, "", {});
+		const text_option_B = this.add.text(1279, 498, "", {});
 		text_option_B.text = "Opção B";
-		text_option_B.setStyle({ "backgroundColor": "#009bc1ff", "fontSize": "50px", "shadow.color": "#fff", "shadow.stroke":true});
+		text_option_B.setStyle({ "backgroundColor": "", "fontSize": "50px", "shadow.color": "#fff", "shadow.stroke":true});
 		text_option_B.setPadding({"left":10,"top":10,"right":10,"bottom":10});
 
 		// onPointerDownScript
@@ -43,9 +46,9 @@ export default class Level extends Phaser.Scene {
 		const emitEventActionScript = new EmitEventActionScript(onPointerDownScript);
 
 		// text_option_A
-		const text_option_A = this.add.text(406, 392, "", {});
+		const text_option_A = this.add.text(414, 499, "", {});
 		text_option_A.text = "Opção A";
-		text_option_A.setStyle({ "backgroundColor": "#ff911aff", "fontSize": "50px" });
+		text_option_A.setStyle({ "backgroundColor": "", "fontSize": "50px" });
 		text_option_A.setPadding({"left":10,"top":10,"right":10,"bottom":10});
 
 		// onPointerDownScript_1
@@ -55,13 +58,14 @@ export default class Level extends Phaser.Scene {
 		const emitEventActionScript_1 = new EmitEventActionScript(onPointerDownScript_1);
 
 		// decisao_fundo
-		const decisao_fundo = this.add.rectangle(985, 207, 215, 128);
+		const decisao_fundo = this.add.rectangle(962, 544, 125, 178);
 		decisao_fundo.scaleX = 4.212742875775465;
 		decisao_fundo.scaleY = 2.8391363745211793;
 		decisao_fundo.isFilled = true;
+		decisao_fundo.fillAlpha = 0.7;
 
 		// decisao_titulo
-		const decisao_titulo = this.add.text(698, 107, "", {});
+		const decisao_titulo = this.add.text(711, 301, "", {});
 		decisao_titulo.text = "Título da Decisão";
 		decisao_titulo.setStyle({ "color": "#000000ff", "fontSize": "45px" });
 
@@ -72,9 +76,10 @@ export default class Level extends Phaser.Scene {
 		new UpdateTextAction(onUpdateCard);
 
 		// decisao_texto
-		const decisao_texto = this.add.text(654, 205, "", {});
-		decisao_texto.text = "Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit. \nInteger molestie tortor nisi, \n";
-		decisao_texto.setStyle({ "color": "#000000ff", "fontSize": "35px" });
+		const decisao_texto = this.add.text(713, 404, "", {});
+		decisao_texto.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam malesuada felis at elit rhoncus viverra a at dolor. In in accumsan nisi. Proin accumsan libero nec sagittis ultrices. Integer non odio quis quam commodo sollicitudin eget sit amet ligula. Nulla congue neque ac pretium malesuada. Praesent in lorem ultrices nibh consectetur suscipit. Nam eget velit tempor, auctor mi et, sollicitudin quam. Aliquam lacinia pretium tincidunt. In rhoncus, felis et tempor commodo, tellus sapien tempor arcu, sit amet cursus ex massa hendrerit nunc. Cras commodo dui eget erat pretium, non maximus elit condimentum. Maecenas nec tincidunt augue. Sed sodales sem et gravida pharetra. Quisque interdum pellentesque neque in blandit. Maecenas eu lectus sem.";
+		decisao_texto.setStyle({ "align": "justify", "color": "#000000ff", "fixedWidth":511,"fixedHeight":384,"fontSize": "25px" });
+		decisao_texto.setWordWrapWidth(511);
 
 		// onUpdateCard_1
 		const onUpdateCard_1 = new OnEventScript(decisao_texto);

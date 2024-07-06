@@ -25,6 +25,11 @@
                 "key": "decor"
             },
             {
+                "url": "assets/images/level/fundo-teste.png",
+                "type": "image",
+                "key": "fundo-teste"
+            },
+            {
                 "textureURL": "assets/fonts/hyperdrive.png",
                 "fontDataURL": "assets/fonts/hyperdrive.xml",
                 "type": "bitmapFont",

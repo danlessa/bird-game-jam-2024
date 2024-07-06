@@ -145,19 +145,19 @@ export default class GameplayScript extends ScriptNode {
 		switch (this.card_sequence) {
 			case 0:
 				this.decision_title = "Titulo 1";
-				this.decision_text = "Texto 1";
+				this.decision_text = "Quisque iaculis dolor eget magna dapibus, vitae varius elit blandit. Donec tempor libero ut tempus varius. Ut ac ullamcorper libero, eget semper libero. Proin consequat tempor luctus. Curabitur sed metus sem. Phasellus semper feugiat mi id scelerisque. Nam lectus ante, commodo sit amet volutpat sit amet, congue vel massa. Donec at sapien eget libero ultrices vulputate. Nam finibus dapibus malesuada. Aliquam feugiat malesuada ipsum eget finibus. Sed molestie pellentesque leo, vulputate tincidunt velit consequat nec. Nullam in neque sed nibh egestas dictum. Proin id iaculis velit.";
 				this.decision_option_A_label = "A 1";
 				this.decision_option_B_label = "B 1";
 				break;
 			case 1:
 				this.decision_title = "Titulo 2";
-				this.decision_text = "Texto 2";
+				this.decision_text = "Quisque eleifend egestas erat, ut auctor odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam consequat ex nunc, ac faucibus neque gravida nec. Ut sodales, neque sed dapibus dictum, justo nibh tincidunt velit, a venenatis magna tellus et nibh. Nulla sed purus id urna cursus auctor. Suspendisse potenti. Vivamus et velit pretium, malesuada justo nec, feugiat arcu. Phasellus egestas diam sed finibus tristique. Quisque pharetra lacinia lacus, id elementum odio bibendum eget. Praesent viverra libero eu nisl auctor, quis hendrerit urna consectetur. Morbi vitae nunc lacus. Ut tempus sit amet arcu et dignissim. Vestibulum dui ante, scelerisque sit amet eros ut, commodo tristique nisl.";
 				this.decision_option_A_label = "A 2";
 				this.decision_option_B_label = "B 2";
 				break;
 			default:
 				this.decision_title = "Titulo D";
-				this.decision_text = "Texto D";
+				this.decision_text = "Nam interdum sed eros et commodo. Cras ut elit urna. Duis vel sapien a leo luctus mattis in eget dui. Curabitur eu auctor massa. Cras posuere lorem et auctor auctor. Etiam ornare ut mi sit amet imperdiet. Nulla ac bibendum magna. Donec a consequat odio. Pellentesque et faucibus magna. Nam mi ex, laoreet eget dapibus sed, fermentum non dolor. Nam at luctus leo, non porta quam. Nam eu metus sit amet erat finibus tristique a id justo. Cras pellentesque id magna vitae volutpat.";
 				this.decision_option_A_label = "A D";
 				this.decision_option_B_label = "B D";
 				break;
@@ -167,6 +167,14 @@ export default class GameplayScript extends ScriptNode {
 		this.scene.events.emit("update-card-option-A-label", this.decision_option_A_label);
 		this.scene.events.emit("update-card-option-B-label", this.decision_option_B_label);
 		this.scene.events.emit("update-points", this.card_sequence);
+
+
+		this.scene.events.emit("update-health", this.health);
+		this.scene.events.emit("update-money", this.money);
+		this.scene.events.emit("update-inf-env", this.influence_environmentalists);
+		this.scene.events.emit("update-inf-crypto", this.influence_crypto);
+		this.scene.events.emit("update-inf-militia", this.influence_militia);
+		this.scene.events.emit("update-inf-est", this.influence_state);
 
 		this.card_sequence++;
 	}

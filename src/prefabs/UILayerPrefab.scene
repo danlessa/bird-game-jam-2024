@@ -72,7 +72,7 @@
                     "type": "Container",
                     "id": "6eda85a9-7b6a-4405-93a3-20d1119ce406",
                     "label": "startsIcon",
-                    "x": 91,
+                    "x": 92,
                     "y": 72,
                     "scaleX": 0.5591245841155765,
                     "scaleY": 0.5591245841155765,
@@ -152,9 +152,9 @@
                 {
                     "type": "BitmapText",
                     "id": "a9807077-5d88-4e8e-8d5c-90b30fe43708",
-                    "label": "pointsCounter",
-                    "x": 206,
-                    "y": 79,
+                    "label": "pointsCounter_count",
+                    "x": 1773,
+                    "y": 289,
                     "originX": 0.5,
                     "originY": 0.5,
                     "tintTopLeft": "#81c415",
@@ -198,6 +198,392 @@
                                         "y"
                                     ],
                                     "label": "updatePointsAction"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "f636403a-ddc2-4ebb-ba33-c8df16646ffe",
+                    "label": "pointsCounter_money",
+                    "x": 204,
+                    "y": 208,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "tintTopLeft": "#81c415",
+                    "tintTopRight": "#81c415",
+                    "tintBottomLeft": "#e1b14b",
+                    "tintBottomRight": "#e1b14b",
+                    "tintFill": true,
+                    "text": "0",
+                    "font": "hyperdrive",
+                    "fontSize": 100,
+                    "list": [
+                        {
+                            "prefabId": "1de438d1-5401-42d3-a8b0-adda8fc8c320",
+                            "id": "ff07ea1e-2a01-49e2-be27-e9f825ce36bc",
+                            "unlock": [
+                                "offset",
+                                "x",
+                                "y"
+                            ],
+                            "label": "floatingObjectScript",
+                            "offset": 5
+                        },
+                        {
+                            "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                            "id": "714c57b0-1ee0-479b-8062-7444411b3431",
+                            "unlock": [
+                                "eventName",
+                                "eventEmitter",
+                                "x",
+                                "y"
+                            ],
+                            "label": "onUpdatePoints_1",
+                            "eventName": "update-money",
+                            "eventEmitter": "scene.events",
+                            "list": [
+                                {
+                                    "prefabId": "bfbbe5ee-7aa2-4f38-9b31-777c6df483d3",
+                                    "id": "c14a0feb-89e3-4dfb-82bd-9ff17588df19",
+                                    "unlock": [
+                                        "x",
+                                        "y"
+                                    ],
+                                    "label": "updatePointsAction_1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Text",
+                    "id": "73d0fd9d-cb4f-4130-9903-7cd7a65734cc",
+                    "label": "text_1",
+                    "x": 47,
+                    "y": 169,
+                    "text": "$",
+                    "fontSize": "100px"
+                },
+                {
+                    "type": "Text",
+                    "id": "e8d62e20-380f-493d-9967-24ee2f2d401f",
+                    "label": "text",
+                    "x": 31,
+                    "y": 295,
+                    "text": "Inf. Amb.",
+                    "fontSize": "60px"
+                },
+                {
+                    "type": "Text",
+                    "id": "3b416d8d-0645-466d-b5ef-3261f4272c98",
+                    "label": "text_2",
+                    "x": 31,
+                    "y": 377,
+                    "text": "Inf. Crypto",
+                    "fontSize": "60px"
+                },
+                {
+                    "type": "Text",
+                    "id": "4bebcb9d-f997-4ebe-ac51-79d25819e9ca",
+                    "label": "text_3",
+                    "x": 31,
+                    "y": 455,
+                    "text": "Inf. Mil.",
+                    "fontSize": "60px"
+                },
+                {
+                    "type": "Text",
+                    "id": "7c8b6a21-344d-4435-89ff-584ef5f7f685",
+                    "label": "text_4",
+                    "x": 31,
+                    "y": 531,
+                    "text": "Inf. Est.",
+                    "fontSize": "60px"
+                },
+                {
+                    "type": "Text",
+                    "id": "26698071-e700-4f74-a839-da86355b0565",
+                    "label": "text_5",
+                    "x": 25,
+                    "y": 614,
+                    "fontSize": "60px"
+                },
+                {
+                    "type": "Text",
+                    "id": "438c7c8c-97f5-4d91-83cb-e8acb1a239e6",
+                    "label": "text_6",
+                    "x": 1697,
+                    "y": 254,
+                    "text": "#",
+                    "fontSize": "60px"
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "c2bc8db5-aee5-4cfa-bcf6-9408bcd31d99",
+                    "label": "pointsCounter_influence_enviromentalists",
+                    "x": 420,
+                    "y": 326,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "tintTopLeft": "#81c415",
+                    "tintTopRight": "#81c415",
+                    "tintBottomLeft": "#e1b14b",
+                    "tintBottomRight": "#e1b14b",
+                    "tintFill": true,
+                    "text": "0",
+                    "font": "hyperdrive",
+                    "fontSize": 100,
+                    "list": [
+                        {
+                            "prefabId": "1de438d1-5401-42d3-a8b0-adda8fc8c320",
+                            "id": "3255da22-2786-4d0c-a504-3ef1e5cd68fc",
+                            "unlock": [
+                                "offset",
+                                "x",
+                                "y"
+                            ],
+                            "label": "floatingObjectScript_6",
+                            "offset": 5
+                        },
+                        {
+                            "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                            "id": "8c3c2b35-7c1b-4c9f-b59d-67655984126f",
+                            "unlock": [
+                                "eventName",
+                                "eventEmitter",
+                                "x",
+                                "y"
+                            ],
+                            "label": "onUpdatePoints_2",
+                            "eventName": "update-inf-env",
+                            "eventEmitter": "scene.events",
+                            "list": [
+                                {
+                                    "prefabId": "bfbbe5ee-7aa2-4f38-9b31-777c6df483d3",
+                                    "id": "dc041d92-9abc-4509-87b1-9cb12b249406",
+                                    "unlock": [
+                                        "x",
+                                        "y"
+                                    ],
+                                    "label": "updatePointsAction_2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "a4f420e7-22ea-4f51-989c-b56d6f097e23",
+                    "label": "pointsCounter_influence_crypto",
+                    "x": 471,
+                    "y": 412,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "tintTopLeft": "#81c415",
+                    "tintTopRight": "#81c415",
+                    "tintBottomLeft": "#e1b14b",
+                    "tintBottomRight": "#e1b14b",
+                    "tintFill": true,
+                    "text": "0",
+                    "font": "hyperdrive",
+                    "fontSize": 100,
+                    "list": [
+                        {
+                            "prefabId": "1de438d1-5401-42d3-a8b0-adda8fc8c320",
+                            "id": "2302b1a7-6c04-4d94-9208-aeed174794d3",
+                            "unlock": [
+                                "offset",
+                                "x",
+                                "y"
+                            ],
+                            "label": "floatingObjectScript_7",
+                            "offset": 5
+                        },
+                        {
+                            "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                            "id": "e052bc29-6745-45f3-915b-4abba395c6a8",
+                            "unlock": [
+                                "eventName",
+                                "eventEmitter",
+                                "x",
+                                "y"
+                            ],
+                            "label": "onUpdatePoints_3",
+                            "eventName": "update-inf-crypto",
+                            "eventEmitter": "scene.events",
+                            "list": [
+                                {
+                                    "prefabId": "bfbbe5ee-7aa2-4f38-9b31-777c6df483d3",
+                                    "id": "1e613913-8495-4cc3-99c0-4d14634f0070",
+                                    "unlock": [
+                                        "x",
+                                        "y"
+                                    ],
+                                    "label": "updatePointsAction_3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "f44d3537-c459-4291-92fb-44d9d78d5b2f",
+                    "label": "pointsCounter_influence_militia",
+                    "x": 397,
+                    "y": 496,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "tintTopLeft": "#81c415",
+                    "tintTopRight": "#81c415",
+                    "tintBottomLeft": "#e1b14b",
+                    "tintBottomRight": "#e1b14b",
+                    "tintFill": true,
+                    "text": "0",
+                    "font": "hyperdrive",
+                    "fontSize": 100,
+                    "list": [
+                        {
+                            "prefabId": "1de438d1-5401-42d3-a8b0-adda8fc8c320",
+                            "id": "9aa984ad-3a8f-47bc-94c5-6c65283aade4",
+                            "unlock": [
+                                "offset",
+                                "x",
+                                "y"
+                            ],
+                            "label": "floatingObjectScript_8",
+                            "offset": 5
+                        },
+                        {
+                            "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                            "id": "8def5677-244f-4707-9e0f-d21f50fab8b2",
+                            "unlock": [
+                                "eventName",
+                                "eventEmitter",
+                                "x",
+                                "y"
+                            ],
+                            "label": "onUpdatePoints_4",
+                            "eventName": "update-inf-militia",
+                            "eventEmitter": "scene.events",
+                            "list": [
+                                {
+                                    "prefabId": "bfbbe5ee-7aa2-4f38-9b31-777c6df483d3",
+                                    "id": "d8e92d18-cd06-4644-83b4-015e1dba5f33",
+                                    "unlock": [
+                                        "x",
+                                        "y"
+                                    ],
+                                    "label": "updatePointsAction_4"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "0fde848d-1cff-497e-8c3c-97c681c60153",
+                    "label": "pointsCounter_influence_estado",
+                    "x": 405,
+                    "y": 577,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "tintTopLeft": "#81c415",
+                    "tintTopRight": "#81c415",
+                    "tintBottomLeft": "#e1b14b",
+                    "tintBottomRight": "#e1b14b",
+                    "tintFill": true,
+                    "text": "0",
+                    "font": "hyperdrive",
+                    "fontSize": 100,
+                    "list": [
+                        {
+                            "prefabId": "1de438d1-5401-42d3-a8b0-adda8fc8c320",
+                            "id": "f79b257c-5b0d-4fdb-ab29-d20b87bddb30",
+                            "unlock": [
+                                "offset",
+                                "x",
+                                "y"
+                            ],
+                            "label": "floatingObjectScript_9",
+                            "offset": 5
+                        },
+                        {
+                            "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                            "id": "10b7cdc0-3114-423e-ad62-9c4f8c5994fb",
+                            "unlock": [
+                                "eventName",
+                                "eventEmitter",
+                                "x",
+                                "y"
+                            ],
+                            "label": "onUpdatePoints_5",
+                            "eventName": "update-inf-est",
+                            "eventEmitter": "scene.events",
+                            "list": [
+                                {
+                                    "prefabId": "bfbbe5ee-7aa2-4f38-9b31-777c6df483d3",
+                                    "id": "b070add4-58c2-4c52-ac7d-f531c79b3191",
+                                    "unlock": [
+                                        "x",
+                                        "y"
+                                    ],
+                                    "label": "updatePointsAction_5"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "182cbba3-6eca-49ea-a1f7-1993685a34de",
+                    "label": "pointsCounter_health",
+                    "x": 201,
+                    "y": 75,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "tintTopLeft": "#81c415",
+                    "tintTopRight": "#81c415",
+                    "tintBottomLeft": "#e1b14b",
+                    "tintBottomRight": "#e1b14b",
+                    "tintFill": true,
+                    "text": "0",
+                    "font": "hyperdrive",
+                    "fontSize": 100,
+                    "list": [
+                        {
+                            "prefabId": "1de438d1-5401-42d3-a8b0-adda8fc8c320",
+                            "id": "59ed9edf-d281-4c56-abf5-da4cddf85bb5",
+                            "unlock": [
+                                "offset",
+                                "x",
+                                "y"
+                            ],
+                            "label": "floatingObjectScript_10",
+                            "offset": 5
+                        },
+                        {
+                            "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                            "id": "4c46250b-48c3-4164-b0f8-db5ff720a9ac",
+                            "unlock": [
+                                "eventName",
+                                "eventEmitter",
+                                "x",
+                                "y"
+                            ],
+                            "label": "onUpdatePoints_6",
+                            "eventName": "update-health",
+                            "eventEmitter": "scene.events",
+                            "list": [
+                                {
+                                    "prefabId": "bfbbe5ee-7aa2-4f38-9b31-777c6df483d3",
+                                    "id": "12edd43b-763e-4bc2-a25f-71c4746754f5",
+                                    "unlock": [
+                                        "x",
+                                        "y"
+                                    ],
+                                    "label": "updatePointsAction_6"
                                 }
                             ]
                         }
