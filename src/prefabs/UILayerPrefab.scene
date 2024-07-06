@@ -270,37 +270,37 @@
                     "type": "Text",
                     "id": "e8d62e20-380f-493d-9967-24ee2f2d401f",
                     "label": "text",
-                    "x": 31,
-                    "y": 295,
-                    "text": "Inf. Amb.",
-                    "fontSize": "60px"
+                    "x": 23,
+                    "y": 293,
+                    "text": "Ambientalistas:",
+                    "fontSize": "30px"
                 },
                 {
                     "type": "Text",
                     "id": "3b416d8d-0645-466d-b5ef-3261f4272c98",
                     "label": "text_2",
-                    "x": 31,
-                    "y": 377,
-                    "text": "Inf. Crypto",
-                    "fontSize": "60px"
+                    "x": 26,
+                    "y": 340,
+                    "text": "Crypto:",
+                    "fontSize": "30px"
                 },
                 {
                     "type": "Text",
                     "id": "4bebcb9d-f997-4ebe-ac51-79d25819e9ca",
                     "label": "text_3",
-                    "x": 31,
-                    "y": 455,
-                    "text": "Inf. Mil.",
-                    "fontSize": "60px"
+                    "x": 29,
+                    "y": 388,
+                    "text": "Milicias:",
+                    "fontSize": "30px"
                 },
                 {
                     "type": "Text",
                     "id": "7c8b6a21-344d-4435-89ff-584ef5f7f685",
                     "label": "text_4",
-                    "x": 31,
-                    "y": 531,
-                    "text": "Inf. Est.",
-                    "fontSize": "60px"
+                    "x": 24,
+                    "y": 435,
+                    "text": "Estado:",
+                    "fontSize": "30px"
                 },
                 {
                     "type": "Text",
@@ -323,8 +323,8 @@
                     "type": "BitmapText",
                     "id": "c2bc8db5-aee5-4cfa-bcf6-9408bcd31d99",
                     "label": "pointsCounter_influence_enviromentalists",
-                    "x": 420,
-                    "y": 326,
+                    "x": 317,
+                    "y": 306,
                     "originX": 0.5,
                     "originY": 0.5,
                     "tintTopLeft": "#81c415",
@@ -334,7 +334,7 @@
                     "tintFill": true,
                     "text": "0",
                     "font": "hyperdrive",
-                    "fontSize": 100,
+                    "fontSize": 30,
                     "list": [
                         {
                             "prefabId": "1de438d1-5401-42d3-a8b0-adda8fc8c320",
@@ -377,8 +377,8 @@
                     "type": "BitmapText",
                     "id": "a4f420e7-22ea-4f51-989c-b56d6f097e23",
                     "label": "pointsCounter_influence_crypto",
-                    "x": 471,
-                    "y": 412,
+                    "x": 316,
+                    "y": 355,
                     "originX": 0.5,
                     "originY": 0.5,
                     "tintTopLeft": "#81c415",
@@ -388,7 +388,7 @@
                     "tintFill": true,
                     "text": "0",
                     "font": "hyperdrive",
-                    "fontSize": 100,
+                    "fontSize": 30,
                     "list": [
                         {
                             "prefabId": "1de438d1-5401-42d3-a8b0-adda8fc8c320",
@@ -431,8 +431,8 @@
                     "type": "BitmapText",
                     "id": "f44d3537-c459-4291-92fb-44d9d78d5b2f",
                     "label": "pointsCounter_influence_militia",
-                    "x": 397,
-                    "y": 496,
+                    "x": 314,
+                    "y": 402,
                     "originX": 0.5,
                     "originY": 0.5,
                     "tintTopLeft": "#81c415",
@@ -442,7 +442,7 @@
                     "tintFill": true,
                     "text": "0",
                     "font": "hyperdrive",
-                    "fontSize": 100,
+                    "fontSize": 30,
                     "list": [
                         {
                             "prefabId": "1de438d1-5401-42d3-a8b0-adda8fc8c320",
@@ -485,8 +485,8 @@
                     "type": "BitmapText",
                     "id": "0fde848d-1cff-497e-8c3c-97c681c60153",
                     "label": "pointsCounter_influence_estado",
-                    "x": 405,
-                    "y": 577,
+                    "x": 311,
+                    "y": 456,
                     "originX": 0.5,
                     "originY": 0.5,
                     "tintTopLeft": "#81c415",
@@ -496,7 +496,7 @@
                     "tintFill": true,
                     "text": "0",
                     "font": "hyperdrive",
-                    "fontSize": 100,
+                    "fontSize": 30,
                     "list": [
                         {
                             "prefabId": "1de438d1-5401-42d3-a8b0-adda8fc8c320",

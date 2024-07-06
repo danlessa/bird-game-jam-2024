@@ -34,10 +34,11 @@ export default class Level extends Phaser.Scene {
 		this.add.existing(uiLayer);
 
 		// text_option_B
-		const text_option_B = this.add.text(1279, 498, "", {});
+		const text_option_B = this.add.text(1296, 442, "", {});
 		text_option_B.text = "Opção B";
-		text_option_B.setStyle({ "backgroundColor": "", "fontSize": "50px", "shadow.color": "#fff", "shadow.stroke":true});
+		text_option_B.setStyle({ "align": "center", "backgroundColor": "", "fixedWidth":180,"fixedHeight":185,"fontSize": "25px", "shadow.color": "#fff", "shadow.stroke":true});
 		text_option_B.setPadding({"left":10,"top":10,"right":10,"bottom":10});
+		text_option_B.setWordWrapWidth(180);
 
 		// onPointerDownScript
 		const onPointerDownScript = new OnPointerDownScript(text_option_B);
@@ -45,17 +46,30 @@ export default class Level extends Phaser.Scene {
 		// emitEventActionScript
 		const emitEventActionScript = new EmitEventActionScript(onPointerDownScript);
 
+		// onEventScript_1
+		const onEventScript_1 = new OnEventScript(text_option_B);
+
+		// updateTextAction_3
+		new UpdateTextAction(onEventScript_1);
+
 		// text_option_A
-		const text_option_A = this.add.text(414, 499, "", {});
+		const text_option_A = this.add.text(438, 449, "", {});
 		text_option_A.text = "Opção A";
-		text_option_A.setStyle({ "backgroundColor": "", "fontSize": "50px" });
+		text_option_A.setStyle({ "align": "center", "backgroundColor": "", "fixedWidth":193,"fixedHeight":180,"fontSize": "25px" });
 		text_option_A.setPadding({"left":10,"top":10,"right":10,"bottom":10});
+		text_option_A.setWordWrapWidth(180);
 
 		// onPointerDownScript_1
 		const onPointerDownScript_1 = new OnPointerDownScript(text_option_A);
 
 		// emitEventActionScript_1
 		const emitEventActionScript_1 = new EmitEventActionScript(onPointerDownScript_1);
+
+		// onEventScript
+		const onEventScript = new OnEventScript(text_option_A);
+
+		// updateTextAction_2
+		new UpdateTextAction(onEventScript);
 
 		// decisao_fundo
 		const decisao_fundo = this.add.rectangle(962, 544, 125, 178);
@@ -65,9 +79,10 @@ export default class Level extends Phaser.Scene {
 		decisao_fundo.fillAlpha = 0.7;
 
 		// decisao_titulo
-		const decisao_titulo = this.add.text(711, 301, "", {});
+		const decisao_titulo = this.add.text(698, 296, "", {});
 		decisao_titulo.text = "Título da Decisão";
-		decisao_titulo.setStyle({ "color": "#000000ff", "fontSize": "45px" });
+		decisao_titulo.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":531,"fixedHeight":100,"fontSize": "40px" });
+		decisao_titulo.setWordWrapWidth(531);
 
 		// onUpdateCard
 		const onUpdateCard = new OnEventScript(decisao_titulo);
@@ -103,9 +118,17 @@ export default class Level extends Phaser.Scene {
 		emitEventActionScript.eventName = "selectB";
 		emitEventActionScript.eventEmitter = "scene.events";
 
+		// onEventScript_1 (prefab fields)
+		onEventScript_1.eventName = "update-card-option-B-label";
+		onEventScript_1.eventEmitter = "scene.events";
+
 		// emitEventActionScript_1 (prefab fields)
 		emitEventActionScript_1.eventName = "selectA";
 		emitEventActionScript_1.eventEmitter = "scene.events";
+
+		// onEventScript (prefab fields)
+		onEventScript.eventName = "update-card-option-A-label";
+		onEventScript.eventEmitter = "scene.events";
 
 		// onUpdateCard (prefab fields)
 		onUpdateCard.eventName = "update-card-title";

@@ -12,6 +12,7 @@ import Star from "../../prefabs/Star";
 import { GameSounds } from "../../GameSounds";
 import TextureInfoScript from "./TextureInfoScript";
 import GameoverPrefab from "../../prefabs/GameoverPrefab";
+import Papa from 'papaparse';
 /* END-USER-IMPORTS */
 
 export default class GameplayScript extends ScriptNode {
@@ -57,6 +58,8 @@ export default class GameplayScript extends ScriptNode {
 
 
 
+	private fetched_data: any = [];
+
 	private decision_title = "";
 	private decision_text = "";
 	private decision_option_A_label = "";
@@ -64,26 +67,26 @@ export default class GameplayScript extends ScriptNode {
 	private decision_option_A_text = "";
 	private decision_option_B_text = "";
 
-	private health = 1.0;
-	private money = 2.0;
-	private influence_environmentalists = 3.0;
-	private influence_militia = 4.0;
-	private influence_crypto = 5.0;
-	private influence_state = 6.0;
+	private health = 0.0;
+	private money = 0.0;
+	private influence_environmentalists = 0.0;
+	private influence_militia = 0.0;
+	private influence_crypto = 0.0;
+	private influence_state = 0.0;
 
-	private option_A_health = 1.0;
-	private option_A_money = -1.0;
-	private option_A_influence_environmentalists = 1.0;
-	private option_A_influence_militia = -1.0;
-	private option_A_influence_crypto = 1.0;
-	private option_A_influence_state = -1.0;
+	private option_A_health = 0.0;
+	private option_A_money = 0.0;
+	private option_A_influence_environmentalists = 0.0;
+	private option_A_influence_militia = 0.0;
+	private option_A_influence_crypto = 0.0;
+	private option_A_influence_state = 0.0;
 
-	private option_B_health = -1.0;
-	private option_B_money = 1.0;
-	private option_B_influence_environmentalists = -1.0;
-	private option_B_influence_militia = 1.0;
-	private option_B_influence_crypto = -1.0;
-	private option_B_influence_state = 1.0;
+	private option_B_health = 0.0;
+	private option_B_money = 0.0;
+	private option_B_influence_environmentalists = -0.0;
+	private option_B_influence_militia = 0.0;
+	private option_B_influence_crypto = 0.0;
+	private option_B_influence_state = 0.0;
 
 
 
@@ -105,24 +108,86 @@ export default class GameplayScript extends ScriptNode {
 
 	protected override awake(): void {
 
-		this.scene.events.addListener('drawCard', this.drawCard, this)
-		this.scene.events.addListener('selectA', this.select_option_A, this)
-		this.scene.events.addListener('selectB', this.select_option_B, this)
+		this.fetchCards();
+
 		this.scene.time.addEvent({
-			delay: 100,
-			callback: () => this.drawCard()
-		});
+			delay: 3000,
+			callback: () => {
+				this.scene.events.addListener('drawCard', this.drawCard, this)
+				this.scene.events.addListener('selectA', this.select_option_A, this)
+				this.scene.events.addListener('selectB', this.select_option_B, this)
+				this.scene.time.addEvent({
+					delay: 100,
+					callback: () => this.drawCard()
+				});
+			}
+		})
 
 		//this.spawnStar();
 
 		//this.nextDifficultyLevel();
 	}
 
+	private async fetchCards() {
+
+		var handleResponse = (csvText: string) => {
+			let sheetObjects = Papa.parse(csvText, 
+				{header: true, skipEmptyLines: true,
+					dynamicTyping: true,
+					complete: results => {
+						console.log(results);
+						this.fetched_data = results.data;
+				}
+			}); 
+		};
+
+		var csvToObjects = (csv: string) => {
+			const csvRows = csv.split("\n");
+			const propertyNames = csvSplit(csvRows[0]);
+			let objects = [];
+			for (let i = 1, max = csvRows.length; i < max; i++) {
+				let thisObject: any = {};
+				let row = csvSplit(csvRows[i]);
+				for (let j = 0, max = row.length; j < max; j++) {
+				thisObject[propertyNames[j]] = row[j];
+				// BELOW 4 LINES WILL CONVERT DATES IN THE "ENROLLED" COLUMN TO JS DATE OBJECTS
+				// if (propertyNames[j] === "Enrolled") {
+				//   thisObject[propertyNames[j]] = new Date(row[j]);
+				// } else {
+				//   thisObject[propertyNames[j]] = row[j];
+				// }
+				}
+				objects.push(thisObject);
+			}
+			return objects;
+		};
+
+		function csvSplit(row: string) {
+			return row.split(",").map((val) => val.substring(1, val.length - 1));
+		}
+
+		// sheetID you can find in the URL of your spreadsheet after "spreadsheet/d/"
+		const sheetId = "19PHWwxOLoETByfDJ4b959u62JKQYsBjcU4FN2LoSwjI";
+		// sheetName is the name of the TAB in your spreadsheet
+		const sheetName = encodeURIComponent("Sheet1");
+		const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName}`;
+
+
+		
+		return await fetch(sheetURL)
+		.then((response) => response.text())
+		.then((csvText) => handleResponse(csvText));
+
+	}
+
 	private select_option_A(){
 		this.health += this.option_A_health;
 		this.money += this.option_A_money;
 		this.influence_environmentalists += this.option_A_influence_environmentalists;
-		this.scene.events.emit("update-card-text",  "Texto da Opção A");
+		this.influence_crypto += this.option_A_influence_crypto;
+		this.influence_militia += this.option_A_influence_militia;
+		this.influence_state += this.option_A_influence_militia;
+		this.scene.events.emit("update-card-text",  this.decision_option_A_text);
 		this.scene.time.addEvent({
 			delay: 1000,
 			callback: () => this.drawCard()
@@ -133,7 +198,10 @@ export default class GameplayScript extends ScriptNode {
 		this.health += this.option_B_health;
 		this.money += this.option_B_money;
 		this.influence_environmentalists += this.option_B_influence_environmentalists;
-		this.scene.events.emit("update-card-text",  "Texto da Opção B");
+		this.influence_crypto += this.option_B_influence_crypto;
+		this.influence_militia += this.option_B_influence_militia;
+		this.influence_state += this.option_B_influence_militia;
+		this.scene.events.emit("update-card-text",  this.decision_option_B_text);
 		this.scene.time.addEvent({
 			delay: 1000,
 			callback: () => this.drawCard()
@@ -142,26 +210,35 @@ export default class GameplayScript extends ScriptNode {
 
 	private drawCard() {
 
-		switch (this.card_sequence) {
-			case 0:
-				this.decision_title = "Titulo 1";
-				this.decision_text = "Quisque iaculis dolor eget magna dapibus, vitae varius elit blandit. Donec tempor libero ut tempus varius. Ut ac ullamcorper libero, eget semper libero. Proin consequat tempor luctus. Curabitur sed metus sem. Phasellus semper feugiat mi id scelerisque. Nam lectus ante, commodo sit amet volutpat sit amet, congue vel massa. Donec at sapien eget libero ultrices vulputate. Nam finibus dapibus malesuada. Aliquam feugiat malesuada ipsum eget finibus. Sed molestie pellentesque leo, vulputate tincidunt velit consequat nec. Nullam in neque sed nibh egestas dictum. Proin id iaculis velit.";
-				this.decision_option_A_label = "A 1";
-				this.decision_option_B_label = "B 1";
-				break;
-			case 1:
-				this.decision_title = "Titulo 2";
-				this.decision_text = "Quisque eleifend egestas erat, ut auctor odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam consequat ex nunc, ac faucibus neque gravida nec. Ut sodales, neque sed dapibus dictum, justo nibh tincidunt velit, a venenatis magna tellus et nibh. Nulla sed purus id urna cursus auctor. Suspendisse potenti. Vivamus et velit pretium, malesuada justo nec, feugiat arcu. Phasellus egestas diam sed finibus tristique. Quisque pharetra lacinia lacus, id elementum odio bibendum eget. Praesent viverra libero eu nisl auctor, quis hendrerit urna consectetur. Morbi vitae nunc lacus. Ut tempus sit amet arcu et dignissim. Vestibulum dui ante, scelerisque sit amet eros ut, commodo tristique nisl.";
-				this.decision_option_A_label = "A 2";
-				this.decision_option_B_label = "B 2";
-				break;
-			default:
-				this.decision_title = "Titulo D";
-				this.decision_text = "Nam interdum sed eros et commodo. Cras ut elit urna. Duis vel sapien a leo luctus mattis in eget dui. Curabitur eu auctor massa. Cras posuere lorem et auctor auctor. Etiam ornare ut mi sit amet imperdiet. Nulla ac bibendum magna. Donec a consequat odio. Pellentesque et faucibus magna. Nam mi ex, laoreet eget dapibus sed, fermentum non dolor. Nam at luctus leo, non porta quam. Nam eu metus sit amet erat finibus tristique a id justo. Cras pellentesque id magna vitae volutpat.";
-				this.decision_option_A_label = "A D";
-				this.decision_option_B_label = "B D";
-				break;
-		}
+
+		var card = this.fetched_data[this.card_sequence];
+		console.log(card)
+
+		this.decision_title = card.decision_title;
+		this.decision_text = card.decision_text;
+		this.decision_option_A_label = card.option_A_label;
+		this.decision_option_B_label = card.option_B_label;
+
+		this.decision_option_A_text = card.option_A_outcome;
+		this.decision_option_B_text = card.option_B_outcome;
+
+
+
+		this.option_A_health = card.option_A_health;
+		this.option_A_money = card.option_A_money;
+		this.option_A_influence_environmentalists = card.option_A_influence_environmentalists;
+		this.option_A_influence_crypto = card.option_A_influence_crypto;
+		this.option_A_influence_militia = card.option_A_influence_militia
+		this.option_A_influence_state = card.option_A_influence_state
+
+		this.option_B_health = card.option_B_health;
+		this.option_B_money = card.option_B_money;
+		this.option_B_influence_environmentalists = card.option_B_influence_environmentalists;
+		this.option_B_influence_crypto = card.option_B_influence_crypto;
+		this.option_B_influence_militia = card.option_B_influence_militia
+		this.option_B_influence_state = card.option_B_influence_state
+
+
 		this.scene.events.emit("update-card-title", this.decision_title);
 		this.scene.events.emit("update-card-text", this.decision_text);
 		this.scene.events.emit("update-card-option-A-label", this.decision_option_A_label);
@@ -190,7 +267,7 @@ export default class GameplayScript extends ScriptNode {
 		this._maxSpawnDelay =  Math.max(this._maxSpawnDelay - 100, 0);
 
 		this.scene.time.addEvent({
-			delay: 5000,
+			delay: 2000,
 			callback: () => this.nextDifficultyLevel()
 		});
 	}

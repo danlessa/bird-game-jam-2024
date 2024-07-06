@@ -37,17 +37,21 @@
             "type": "Text",
             "id": "50ba1343-d270-40d7-b787-8e70aff6e371",
             "label": "text_option_B",
-            "x": 1279,
-            "y": 498,
+            "x": 1296,
+            "y": 442,
             "text": "Opção B",
+            "fixedWidth": 180,
+            "fixedHeight": 185,
             "paddingLeft": 10,
             "paddingTop": 10,
             "paddingRight": 10,
             "paddingBottom": 10,
-            "fontSize": "50px",
+            "align": "center",
+            "fontSize": "25px",
             "backgroundColor": "",
             "shadow.stroke": true,
             "shadow.color": "#fff",
+            "wordWrapWidth": 180,
             "list": [
                 {
                     "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -66,6 +70,24 @@
                             "eventEmitter": "scene.events"
                         }
                     ]
+                },
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "6a29b5d4-09e2-449c-82df-a22604fd3516",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_1",
+                    "eventName": "update-card-option-B-label",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "bfbbe5ee-7aa2-4f38-9b31-777c6df483d3",
+                            "id": "03a02229-7ab8-4222-b65e-c9ebfd299ebe",
+                            "label": "updateTextAction_3"
+                        }
+                    ]
                 }
             ]
         },
@@ -73,15 +95,19 @@
             "type": "Text",
             "id": "20e28896-0e2a-44dd-897c-4cd0963852bf",
             "label": "text_option_A",
-            "x": 414,
-            "y": 499,
+            "x": 438,
+            "y": 449,
             "text": "Opção A",
+            "fixedWidth": 193,
+            "fixedHeight": 180,
             "paddingLeft": 10,
             "paddingTop": 10,
             "paddingRight": 10,
             "paddingBottom": 10,
-            "fontSize": "50px",
+            "align": "center",
+            "fontSize": "25px",
             "backgroundColor": "",
+            "wordWrapWidth": 180,
             "list": [
                 {
                     "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -98,6 +124,24 @@
                             "label": "emitEventActionScript_1",
                             "eventName": "selectA",
                             "eventEmitter": "scene.events"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "062c5b9b-a9dd-4fba-8c21-6b8b6149cfed",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript",
+                    "eventName": "update-card-option-A-label",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "bfbbe5ee-7aa2-4f38-9b31-777c6df483d3",
+                            "id": "63ef19e0-3ec9-44b1-9975-47e32355c11c",
+                            "label": "updateTextAction_2"
                         }
                     ]
                 }
@@ -120,11 +164,15 @@
             "type": "Text",
             "id": "56040518-c6a6-4149-8512-a288dd5091f1",
             "label": "decisao_titulo",
-            "x": 711,
-            "y": 301,
+            "x": 698,
+            "y": 296,
             "text": "Título da Decisão",
-            "fontSize": "45px",
+            "fixedWidth": 531,
+            "fixedHeight": 100,
+            "align": "center",
+            "fontSize": "40px",
             "color": "#000000ff",
+            "wordWrapWidth": 531,
             "list": [
                 {
                     "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
