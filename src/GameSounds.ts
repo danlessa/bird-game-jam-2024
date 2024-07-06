@@ -14,7 +14,7 @@ export class GameSounds {
         }
 
         GameSounds.musicSound = scene.sound.add("music") as Phaser.Sound.WebAudioSound;
-        GameSounds.musicSound.play({ loop: true, volume: 0.2 });
+        GameSounds.musicSound.play({ loop: true, volume: 1.0 });
 
         GameSounds.bubbleSound = scene.sound.add("bubble") as Phaser.Sound.WebAudioSound;
         GameSounds.effectsEnabled = true;

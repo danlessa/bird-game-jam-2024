@@ -181,6 +181,7 @@ export default class GameplayScript extends ScriptNode {
 	}
 
 	private select_option_A(){
+		GameSounds.playBubble();
 		this.health += this.option_A_health;
 		this.money += this.option_A_money;
 		this.influence_environmentalists += this.option_A_influence_environmentalists;
@@ -195,6 +196,7 @@ export default class GameplayScript extends ScriptNode {
 	}
 
 	private select_option_B(){
+		GameSounds.playBubble();
 		this.health += this.option_B_health;
 		this.money += this.option_B_money;
 		this.influence_environmentalists += this.option_B_influence_environmentalists;
