@@ -69,87 +69,6 @@
                     ]
                 },
                 {
-                    "type": "Container",
-                    "id": "6eda85a9-7b6a-4405-93a3-20d1119ce406",
-                    "label": "startsIcon",
-                    "x": 92,
-                    "y": 72,
-                    "scaleX": 0.5591245841155765,
-                    "scaleY": 0.5591245841155765,
-                    "list": [
-                        {
-                            "type": "Image",
-                            "id": "dfd04d86-d439-43f8-b665-54413a9dd7a1",
-                            "label": "star_yellow",
-                            "texture": {
-                                "key": "star-yellow"
-                            },
-                            "x": -15,
-                            "y": -9,
-                            "list": [
-                                {
-                                    "prefabId": "1de438d1-5401-42d3-a8b0-adda8fc8c320",
-                                    "id": "2b84ff7d-e384-4968-bfff-fe0eaf8818e1",
-                                    "unlock": [
-                                        "offset",
-                                        "x",
-                                        "y"
-                                    ],
-                                    "label": "floatingObjectScript_4",
-                                    "offset": 10
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Image",
-                            "id": "c7489fc2-4cee-4017-a10c-95c670bb8b17",
-                            "label": "star_orange",
-                            "texture": {
-                                "key": "star-orange"
-                            },
-                            "x": 2,
-                            "y": 34,
-                            "list": [
-                                {
-                                    "prefabId": "1de438d1-5401-42d3-a8b0-adda8fc8c320",
-                                    "id": "cf483580-cc5e-4fee-9d17-bc7e2f197dab",
-                                    "unlock": [
-                                        "offset",
-                                        "x",
-                                        "y"
-                                    ],
-                                    "label": "floatingObjectScript_3",
-                                    "offset": 5
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Image",
-                            "id": "b27148ad-5d07-40c3-83ca-af733989f2a0",
-                            "label": "star_green",
-                            "texture": {
-                                "key": "star-green"
-                            },
-                            "x": 27,
-                            "scaleX": 0.7725992149498591,
-                            "scaleY": 0.7725992149498591,
-                            "list": [
-                                {
-                                    "prefabId": "1de438d1-5401-42d3-a8b0-adda8fc8c320",
-                                    "id": "8eed7a24-861d-49f6-8dd1-16e66282c85f",
-                                    "unlock": [
-                                        "offset",
-                                        "x",
-                                        "y"
-                                    ],
-                                    "label": "floatingObjectScript_2",
-                                    "offset": 15
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
                     "type": "BitmapText",
                     "id": "a9807077-5d88-4e8e-8d5c-90b30fe43708",
                     "label": "pointsCounter_count",
@@ -588,6 +507,15 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "type": "Text",
+                    "id": "d7df03cd-07cf-4438-9df6-98a506a6ff6d",
+                    "label": "text_7",
+                    "x": 15,
+                    "y": 76,
+                    "text": "saude",
+                    "fontSize": "40px"
                 }
             ]
         }

@@ -26,35 +26,6 @@ export default class UILayerPrefab extends Phaser.GameObjects.Container {
 		// onPointerDownStartSceneScript
 		const onPointerDownStartSceneScript = new OnPointerDownStartSceneScript(homeButton);
 
-		// startsIcon
-		const startsIcon = scene.add.container(92, 72);
-		startsIcon.scaleX = 0.5591245841155765;
-		startsIcon.scaleY = 0.5591245841155765;
-		this.add(startsIcon);
-
-		// star_yellow
-		const star_yellow = scene.add.image(-15, -9, "star-yellow");
-		startsIcon.add(star_yellow);
-
-		// floatingObjectScript_4
-		const floatingObjectScript_4 = new FloatingObjectScript(star_yellow);
-
-		// star_orange
-		const star_orange = scene.add.image(2, 34, "star-orange");
-		startsIcon.add(star_orange);
-
-		// floatingObjectScript_3
-		const floatingObjectScript_3 = new FloatingObjectScript(star_orange);
-
-		// star_green
-		const star_green = scene.add.image(27, 0, "star-green");
-		star_green.scaleX = 0.7725992149498591;
-		star_green.scaleY = 0.7725992149498591;
-		startsIcon.add(star_green);
-
-		// floatingObjectScript_2
-		const floatingObjectScript_2 = new FloatingObjectScript(star_green);
-
 		// pointsCounter_count
 		const pointsCounter_count = scene.add.bitmapText(1773, 289, "hyperdrive", "0");
 		pointsCounter_count.setOrigin(0.5, 0.5);
@@ -243,20 +214,17 @@ export default class UILayerPrefab extends Phaser.GameObjects.Container {
 		// updatePointsAction_6
 		new UpdateTextAction(onUpdatePoints_6);
 
+		// text_7
+		const text_7 = scene.add.text(15, 76, "", {});
+		text_7.text = "saude";
+		text_7.setStyle({ "fontSize": "40px" });
+		this.add(text_7);
+
 		// floatingObjectScript_1 (prefab fields)
 		floatingObjectScript_1.offset = 5;
 
 		// onPointerDownStartSceneScript.startSceneActionScript (prefab fields)
 		onPointerDownStartSceneScript.startSceneActionScript.sceneKey = "Welcome";
-
-		// floatingObjectScript_4 (prefab fields)
-		floatingObjectScript_4.offset = 10;
-
-		// floatingObjectScript_3 (prefab fields)
-		floatingObjectScript_3.offset = 5;
-
-		// floatingObjectScript_2 (prefab fields)
-		floatingObjectScript_2.offset = 15;
 
 		// floatingObjectScript_5 (prefab fields)
 		floatingObjectScript_5.offset = 5;
