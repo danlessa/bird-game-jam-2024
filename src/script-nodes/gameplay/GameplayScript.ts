@@ -111,7 +111,7 @@ export default class GameplayScript extends ScriptNode {
 		this.fetchCards();
 
 		this.scene.time.addEvent({
-			delay: 3000,
+			delay: 2000,
 			callback: () => {
 				this.scene.events.addListener('drawCard', this.drawCard, this)
 				this.scene.events.addListener('selectA', this.select_option_A, this)
@@ -181,7 +181,7 @@ export default class GameplayScript extends ScriptNode {
 	}
 
 	private select_option_A(){
-		GameSounds.playBubble();
+		GameSounds.playDecision();
 		this.health += this.option_A_health;
 		this.money += this.option_A_money;
 		this.influence_environmentalists += this.option_A_influence_environmentalists;
@@ -190,13 +190,13 @@ export default class GameplayScript extends ScriptNode {
 		this.influence_state += this.option_A_influence_militia;
 		this.scene.events.emit("update-card-text",  this.decision_option_A_text);
 		this.scene.time.addEvent({
-			delay: 1000,
+			delay: 4000,
 			callback: () => this.drawCard()
 		});
 	}
 
 	private select_option_B(){
-		GameSounds.playBubble();
+		GameSounds.playDecision();
 		this.health += this.option_B_health;
 		this.money += this.option_B_money;
 		this.influence_environmentalists += this.option_B_influence_environmentalists;
@@ -205,7 +205,7 @@ export default class GameplayScript extends ScriptNode {
 		this.influence_state += this.option_B_influence_militia;
 		this.scene.events.emit("update-card-text",  this.decision_option_B_text);
 		this.scene.time.addEvent({
-			delay: 1000,
+			delay: 2500,
 			callback: () => this.drawCard()
 		});
 	}
@@ -213,49 +213,60 @@ export default class GameplayScript extends ScriptNode {
 	private drawCard() {
 
 
-		var card = this.fetched_data[this.card_sequence];
-		console.log(card)
+		console.log(this.fetched_data)
+		console.log(this.card_sequence > this.fetched_data.length)
+		if (this.card_sequence < this.fetched_data.length)
+		{
+			var card = this.fetched_data[this.card_sequence];
+			console.log(card)
+			this.decision_title = card.decision_title;
+			this.decision_text = card.decision_text;
+			this.decision_option_A_label = card.option_A_label;
+			this.decision_option_B_label = card.option_B_label;
 
-		this.decision_title = card.decision_title;
-		this.decision_text = card.decision_text;
-		this.decision_option_A_label = card.option_A_label;
-		this.decision_option_B_label = card.option_B_label;
+			this.decision_option_A_text = card.option_A_outcome;
+			this.decision_option_B_text = card.option_B_outcome;
 
-		this.decision_option_A_text = card.option_A_outcome;
-		this.decision_option_B_text = card.option_B_outcome;
+			this.option_A_health = card.option_A_health;
+			this.option_A_money = card.option_A_money;
+			this.option_A_influence_environmentalists = card.option_A_influence_environmentalists;
+			this.option_A_influence_crypto = card.option_A_influence_crypto;
+			this.option_A_influence_militia = card.option_A_influence_militia
+			this.option_A_influence_state = card.option_A_influence_state
 
-
-
-		this.option_A_health = card.option_A_health;
-		this.option_A_money = card.option_A_money;
-		this.option_A_influence_environmentalists = card.option_A_influence_environmentalists;
-		this.option_A_influence_crypto = card.option_A_influence_crypto;
-		this.option_A_influence_militia = card.option_A_influence_militia
-		this.option_A_influence_state = card.option_A_influence_state
-
-		this.option_B_health = card.option_B_health;
-		this.option_B_money = card.option_B_money;
-		this.option_B_influence_environmentalists = card.option_B_influence_environmentalists;
-		this.option_B_influence_crypto = card.option_B_influence_crypto;
-		this.option_B_influence_militia = card.option_B_influence_militia
-		this.option_B_influence_state = card.option_B_influence_state
-
-
-		this.scene.events.emit("update-card-title", this.decision_title);
-		this.scene.events.emit("update-card-text", this.decision_text);
-		this.scene.events.emit("update-card-option-A-label", this.decision_option_A_label);
-		this.scene.events.emit("update-card-option-B-label", this.decision_option_B_label);
-		this.scene.events.emit("update-points", this.card_sequence);
+			this.option_B_health = card.option_B_health;
+			this.option_B_money = card.option_B_money;
+			this.option_B_influence_environmentalists = card.option_B_influence_environmentalists;
+			this.option_B_influence_crypto = card.option_B_influence_crypto;
+			this.option_B_influence_militia = card.option_B_influence_militia
+			this.option_B_influence_state = card.option_B_influence_state
 
 
-		this.scene.events.emit("update-health", this.health);
-		this.scene.events.emit("update-money", this.money);
-		this.scene.events.emit("update-inf-env", this.influence_environmentalists);
-		this.scene.events.emit("update-inf-crypto", this.influence_crypto);
-		this.scene.events.emit("update-inf-militia", this.influence_militia);
-		this.scene.events.emit("update-inf-est", this.influence_state);
+			this.scene.events.emit("update-card-title", this.decision_title);
+			this.scene.events.emit("update-card-text", this.decision_text);
+			this.scene.events.emit("update-card-option-A-label", this.decision_option_A_label);
+			this.scene.events.emit("update-card-option-B-label", this.decision_option_B_label);
+			this.scene.events.emit("update-points", this.card_sequence);
 
-		this.card_sequence++;
+			this.scene.events.emit("update-health", this.health);
+			this.scene.events.emit("update-money", this.money);
+			this.scene.events.emit("update-inf-env", this.influence_environmentalists);
+			this.scene.events.emit("update-inf-crypto", this.influence_crypto);
+			this.scene.events.emit("update-inf-militia", this.influence_militia);
+			this.scene.events.emit("update-inf-est", this.influence_state);
+
+			this.card_sequence++;
+		}
+		else {
+			this.endGame();
+		}
+	}
+
+	private endGame() {
+			this.scene.events.emit("update-card-title", this.decision_title);
+			this.scene.events.emit("update-card-text", this.decision_text);
+			this.scene.events.emit("update-card-option-A-label", this.decision_option_A_label);
+			this.scene.events.emit("update-card-option-B-label", this.decision_option_B_label);
 	}
 
 	private nextDifficultyLevel() {

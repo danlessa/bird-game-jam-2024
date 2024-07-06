@@ -25,9 +25,9 @@
                 "key": "decor"
             },
             {
-                "url": "assets/images/level/fundo-teste.png",
+                "url": "assets/images/level/background.png",
                 "type": "image",
-                "key": "fundo-teste"
+                "key": "background"
             },
             {
                 "textureURL": "assets/fonts/hyperdrive.png",
@@ -47,10 +47,31 @@
             },
             {
                 "url": [
-                    "assets/audio/fundo.mp3"
+                    "assets/audio/background.mp3"
                 ],
                 "type": "audio",
                 "key": "music"
+            },
+            {
+                "url": [
+                    "assets/audio/event_bad.mp3"
+                ],
+                "type": "audio",
+                "key": "event_good"
+            },
+            {
+                "url": [
+                    "assets/audio/event_good.mp3"
+                ],
+                "type": "audio",
+                "key": "event_bad"
+            },
+            {
+                "url": [
+                    "assets/audio/decision.mp3"
+                ],
+                "type": "audio",
+                "key": "decision"
             },
             {
                 "url": "assets/images/welcome/sea.png",

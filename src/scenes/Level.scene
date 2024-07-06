@@ -17,7 +17,7 @@
             "id": "66566c77-d478-4763-a25a-c9b654cda781",
             "label": "image_1",
             "texture": {
-                "key": "fundo-teste"
+                "key": "background"
             },
             "x": 960,
             "y": 540
@@ -39,7 +39,6 @@
             "label": "text_option_B",
             "x": 1296,
             "y": 442,
-            "text": "Opção B",
             "fixedWidth": 180,
             "fixedHeight": 185,
             "paddingLeft": 10,
@@ -97,7 +96,6 @@
             "label": "text_option_A",
             "x": 438,
             "y": 449,
-            "text": "Opção A",
             "fixedWidth": 193,
             "fixedHeight": 180,
             "paddingLeft": 10,
@@ -166,7 +164,6 @@
             "label": "decisao_titulo",
             "x": 698,
             "y": 296,
-            "text": "Título da Decisão",
             "fixedWidth": 531,
             "fixedHeight": 100,
             "align": "center",
@@ -200,7 +197,6 @@
             "label": "decisao_texto",
             "x": 713,
             "y": 404,
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam malesuada felis at elit rhoncus viverra a at dolor. In in accumsan nisi. Proin accumsan libero nec sagittis ultrices. Integer non odio quis quam commodo sollicitudin eget sit amet ligula. Nulla congue neque ac pretium malesuada. Praesent in lorem ultrices nibh consectetur suscipit. Nam eget velit tempor, auctor mi et, sollicitudin quam. Aliquam lacinia pretium tincidunt. In rhoncus, felis et tempor commodo, tellus sapien tempor arcu, sit amet cursus ex massa hendrerit nunc. Cras commodo dui eget erat pretium, non maximus elit condimentum. Maecenas nec tincidunt augue. Sed sodales sem et gravida pharetra. Quisque interdum pellentesque neque in blandit. Maecenas eu lectus sem.",
             "fixedWidth": 511,
             "fixedHeight": 384,
             "align": "justify",

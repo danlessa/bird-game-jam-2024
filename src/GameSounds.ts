@@ -4,6 +4,10 @@ export class GameSounds {
 
     static bubbleSound: Phaser.Sound.WebAudioSound;
 
+    static decisionSound: Phaser.Sound.WebAudioSound;
+    static eventGoodSound: Phaser.Sound.WebAudioSound;
+    static eventBadSound: Phaser.Sound.WebAudioSound;
+
     static effectsEnabled: boolean;
 
     static init(scene: Phaser.Scene) {
@@ -17,6 +21,16 @@ export class GameSounds {
         GameSounds.musicSound.play({ loop: true, volume: 1.0 });
 
         GameSounds.bubbleSound = scene.sound.add("bubble") as Phaser.Sound.WebAudioSound;
+        GameSounds.effectsEnabled = true;
+
+
+        GameSounds.decisionSound = scene.sound.add("decision") as Phaser.Sound.WebAudioSound;
+        GameSounds.effectsEnabled = true;
+
+        GameSounds.eventGoodSound = scene.sound.add("event_good") as Phaser.Sound.WebAudioSound;
+        GameSounds.effectsEnabled = true;
+
+        GameSounds.eventBadSound = scene.sound.add("event_bad") as Phaser.Sound.WebAudioSound;
         GameSounds.effectsEnabled = true;
     }
 
@@ -47,6 +61,30 @@ export class GameSounds {
         if (GameSounds.effectsEnabled) {
 
             GameSounds.bubbleSound.play();
+        }
+    }
+
+    static playDecision() {
+
+        if (GameSounds.effectsEnabled) {
+
+            GameSounds.decisionSound.play();
+        }
+    }
+
+    static playEventGood() {
+
+        if (GameSounds.effectsEnabled) {
+
+            GameSounds.eventGoodSound.play();
+        }
+    }
+
+    static playEventBad() {
+
+        if (GameSounds.effectsEnabled) {
+
+            GameSounds.eventBadSound.play();
         }
     }
 }

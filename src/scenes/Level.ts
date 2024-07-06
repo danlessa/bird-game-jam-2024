@@ -11,6 +11,8 @@ import { OnEventScript } from "@phaserjs/editor-scripts-core";
 import UpdateTextAction from "../script-nodes/gameplay/UpdateTextAction";
 import GameplayScript from "../script-nodes/gameplay/GameplayScript";
 import TextureInfoScript from "../script-nodes/gameplay/TextureInfoScript";
+import { GameSounds } from "../GameSounds";
+
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -27,7 +29,7 @@ export default class Level extends Phaser.Scene {
 	editorCreate(): void {
 
 		// image_1
-		this.add.image(960, 540, "fundo-teste");
+		this.add.image(960, 540, "background");
 
 		// uiLayer
 		const uiLayer = new UILayerPrefab(this, 1, 1);
@@ -35,7 +37,6 @@ export default class Level extends Phaser.Scene {
 
 		// text_option_B
 		const text_option_B = this.add.text(1296, 442, "", {});
-		text_option_B.text = "Opção B";
 		text_option_B.setStyle({ "align": "center", "backgroundColor": "", "fixedWidth":180,"fixedHeight":185,"fontSize": "25px", "shadow.color": "#fff", "shadow.stroke":true});
 		text_option_B.setPadding({"left":10,"top":10,"right":10,"bottom":10});
 		text_option_B.setWordWrapWidth(180);
@@ -54,7 +55,6 @@ export default class Level extends Phaser.Scene {
 
 		// text_option_A
 		const text_option_A = this.add.text(438, 449, "", {});
-		text_option_A.text = "Opção A";
 		text_option_A.setStyle({ "align": "center", "backgroundColor": "", "fixedWidth":193,"fixedHeight":180,"fontSize": "25px" });
 		text_option_A.setPadding({"left":10,"top":10,"right":10,"bottom":10});
 		text_option_A.setWordWrapWidth(180);
@@ -80,7 +80,6 @@ export default class Level extends Phaser.Scene {
 
 		// decisao_titulo
 		const decisao_titulo = this.add.text(698, 296, "", {});
-		decisao_titulo.text = "Título da Decisão";
 		decisao_titulo.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":531,"fixedHeight":100,"fontSize": "40px" });
 		decisao_titulo.setWordWrapWidth(531);
 
@@ -92,7 +91,6 @@ export default class Level extends Phaser.Scene {
 
 		// decisao_texto
 		const decisao_texto = this.add.text(713, 404, "", {});
-		decisao_texto.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam malesuada felis at elit rhoncus viverra a at dolor. In in accumsan nisi. Proin accumsan libero nec sagittis ultrices. Integer non odio quis quam commodo sollicitudin eget sit amet ligula. Nulla congue neque ac pretium malesuada. Praesent in lorem ultrices nibh consectetur suscipit. Nam eget velit tempor, auctor mi et, sollicitudin quam. Aliquam lacinia pretium tincidunt. In rhoncus, felis et tempor commodo, tellus sapien tempor arcu, sit amet cursus ex massa hendrerit nunc. Cras commodo dui eget erat pretium, non maximus elit condimentum. Maecenas nec tincidunt augue. Sed sodales sem et gravida pharetra. Quisque interdum pellentesque neque in blandit. Maecenas eu lectus sem.";
 		decisao_texto.setStyle({ "align": "justify", "color": "#000000ff", "fixedWidth":511,"fixedHeight":384,"fontSize": "25px" });
 		decisao_texto.setWordWrapWidth(511);
 
@@ -157,6 +155,7 @@ export default class Level extends Phaser.Scene {
 	create() {
 
 		this.id++;
+		GameSounds.init(this);
 		this.editorCreate();
 	}
 
