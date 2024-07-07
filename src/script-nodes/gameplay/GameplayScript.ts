@@ -258,7 +258,11 @@ export default class GameplayScript extends ScriptNode {
 		}
 		else if (this.card_type == 'defeat') {
 			GameSounds.playEventBad();
-			//this.reset()
+			this.reset()
+		}
+		else if (this.card_type == 'victory') {
+			GameSounds.playEventGood();
+			this.reset()
 		}
 	}
 
@@ -281,6 +285,10 @@ export default class GameplayScript extends ScriptNode {
 		}
 		else if (this.card_type == 'defeat') {
 			GameSounds.playEventBad();
+			this.reset()
+		}
+		else if (this.card_type == 'victory') {
+			GameSounds.playEventGood();
 			this.reset()
 		}
 	}
@@ -393,7 +401,7 @@ export default class GameplayScript extends ScriptNode {
 		}
 		else {
 			this.scene.events.emit("defeat", false)
-			this.scene.events.emit("false", true)
+			this.scene.events.emit("victory", false)
 		}
 	}
 

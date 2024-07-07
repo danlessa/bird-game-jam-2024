@@ -19,7 +19,7 @@
             "texture": {
                 "key": "background"
             },
-            "x": 961,
+            "x": 960,
             "y": 540
         },
         {
@@ -278,13 +278,13 @@
             "id": "5380e057-1530-4a25-8300-3811d583b80d",
             "label": "reiniciar_jogo",
             "x": 712,
-            "y": 747,
+            "y": 770,
             "visible": false,
-            "text": "Reiniciar",
+            "text": "clique nos botões para reiniciar",
             "fixedWidth": 500,
-            "fixedHeight": 60,
+            "fixedHeight": 34,
             "align": "center",
-            "fontSize": "60px",
+            "fontSize": "23px",
             "backgroundColor": "#421a0689",
             "list": [
                 {

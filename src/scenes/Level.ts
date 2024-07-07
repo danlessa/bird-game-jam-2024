@@ -28,7 +28,7 @@ export default class Level extends Phaser.Scene {
 	editorCreate(): void {
 
 		// image_1
-		this.add.image(961, 540, "background");
+		this.add.image(960, 540, "background");
 
 		// image_2
 		const image_2 = this.add.image(960, 540, "cards-defeat");
@@ -114,10 +114,10 @@ export default class Level extends Phaser.Scene {
 		new UpdateTextAction(onUpdateCard_1);
 
 		// reiniciar_jogo
-		const reiniciar_jogo = this.add.text(712, 747, "", {});
+		const reiniciar_jogo = this.add.text(712, 770, "", {});
 		reiniciar_jogo.visible = false;
-		reiniciar_jogo.text = "Reiniciar";
-		reiniciar_jogo.setStyle({ "align": "center", "backgroundColor": "#421a0689", "fixedWidth":500,"fixedHeight":60,"fontSize": "60px" });
+		reiniciar_jogo.text = "clique nos botões para reiniciar";
+		reiniciar_jogo.setStyle({ "align": "center", "backgroundColor": "#421a0689", "fixedWidth":500,"fixedHeight":34,"fontSize": "23px" });
 
 		// onEventScript_3
 		const onEventScript_3 = new OnEventScript(reiniciar_jogo);
