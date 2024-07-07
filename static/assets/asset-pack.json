@@ -132,6 +132,11 @@
                 "url": "assets/images/level/underwater-8.png",
                 "type": "image",
                 "key": "underwater-8"
+            },
+            {
+                "url": "assets/animations/tucano_1.png",
+                "type": "image",
+                "key": "tucano-1"
             }
         ]
     },

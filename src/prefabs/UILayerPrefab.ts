@@ -29,6 +29,7 @@ export default class UILayerPrefab extends Phaser.GameObjects.Container {
 		// pointsCounter_count
 		const pointsCounter_count = scene.add.bitmapText(1773, 289, "hyperdrive", "0");
 		pointsCounter_count.setOrigin(0.5, 0.5);
+		pointsCounter_count.visible = false;
 		pointsCounter_count.tintFill = true;
 		pointsCounter_count.tintTopLeft = 8504341;
 		pointsCounter_count.tintTopRight = 8504341;
@@ -48,7 +49,7 @@ export default class UILayerPrefab extends Phaser.GameObjects.Container {
 		new UpdateTextAction(onUpdatePoints);
 
 		// pointsCounter_money
-		const pointsCounter_money = scene.add.bitmapText(204, 208, "hyperdrive", "0");
+		const pointsCounter_money = scene.add.bitmapText(200, 87, "hyperdrive", "0");
 		pointsCounter_money.setOrigin(0.5, 0.5);
 		pointsCounter_money.tintFill = true;
 		pointsCounter_money.tintTopLeft = 8504341;
@@ -69,31 +70,35 @@ export default class UILayerPrefab extends Phaser.GameObjects.Container {
 		new UpdateTextAction(onUpdatePoints_1);
 
 		// text_1
-		const text_1 = scene.add.text(47, 169, "", {});
+		const text_1 = scene.add.text(43, 48, "", {});
 		text_1.text = "$";
 		text_1.setStyle({ "fontSize": "100px" });
 		this.add(text_1);
 
 		// text
 		const text = scene.add.text(23, 293, "", {});
+		text.visible = false;
 		text.text = "Ambientalistas:";
 		text.setStyle({ "fontSize": "30px" });
 		this.add(text);
 
 		// text_2
 		const text_2 = scene.add.text(26, 340, "", {});
+		text_2.visible = false;
 		text_2.text = "Crypto:";
 		text_2.setStyle({ "fontSize": "30px" });
 		this.add(text_2);
 
 		// text_3
 		const text_3 = scene.add.text(29, 388, "", {});
+		text_3.visible = false;
 		text_3.text = "Milicias:";
 		text_3.setStyle({ "fontSize": "30px" });
 		this.add(text_3);
 
 		// text_4
 		const text_4 = scene.add.text(24, 435, "", {});
+		text_4.visible = false;
 		text_4.text = "Estado:";
 		text_4.setStyle({ "fontSize": "30px" });
 		this.add(text_4);
@@ -105,6 +110,7 @@ export default class UILayerPrefab extends Phaser.GameObjects.Container {
 
 		// text_6
 		const text_6 = scene.add.text(1697, 254, "", {});
+		text_6.visible = false;
 		text_6.text = "#";
 		text_6.setStyle({ "fontSize": "60px" });
 		this.add(text_6);
@@ -112,6 +118,7 @@ export default class UILayerPrefab extends Phaser.GameObjects.Container {
 		// pointsCounter_influence_enviromentalists
 		const pointsCounter_influence_enviromentalists = scene.add.bitmapText(317, 306, "hyperdrive", "0");
 		pointsCounter_influence_enviromentalists.setOrigin(0.5, 0.5);
+		pointsCounter_influence_enviromentalists.visible = false;
 		pointsCounter_influence_enviromentalists.tintFill = true;
 		pointsCounter_influence_enviromentalists.tintTopLeft = 8504341;
 		pointsCounter_influence_enviromentalists.tintTopRight = 8504341;
@@ -133,6 +140,7 @@ export default class UILayerPrefab extends Phaser.GameObjects.Container {
 		// pointsCounter_influence_crypto
 		const pointsCounter_influence_crypto = scene.add.bitmapText(316, 355, "hyperdrive", "0");
 		pointsCounter_influence_crypto.setOrigin(0.5, 0.5);
+		pointsCounter_influence_crypto.visible = false;
 		pointsCounter_influence_crypto.tintFill = true;
 		pointsCounter_influence_crypto.tintTopLeft = 8504341;
 		pointsCounter_influence_crypto.tintTopRight = 8504341;
@@ -154,6 +162,7 @@ export default class UILayerPrefab extends Phaser.GameObjects.Container {
 		// pointsCounter_influence_militia
 		const pointsCounter_influence_militia = scene.add.bitmapText(314, 402, "hyperdrive", "0");
 		pointsCounter_influence_militia.setOrigin(0.5, 0.5);
+		pointsCounter_influence_militia.visible = false;
 		pointsCounter_influence_militia.tintFill = true;
 		pointsCounter_influence_militia.tintTopLeft = 8504341;
 		pointsCounter_influence_militia.tintTopRight = 8504341;
@@ -175,6 +184,7 @@ export default class UILayerPrefab extends Phaser.GameObjects.Container {
 		// pointsCounter_influence_estado
 		const pointsCounter_influence_estado = scene.add.bitmapText(311, 456, "hyperdrive", "0");
 		pointsCounter_influence_estado.setOrigin(0.5, 0.5);
+		pointsCounter_influence_estado.visible = false;
 		pointsCounter_influence_estado.tintFill = true;
 		pointsCounter_influence_estado.tintTopLeft = 8504341;
 		pointsCounter_influence_estado.tintTopRight = 8504341;
@@ -196,6 +206,7 @@ export default class UILayerPrefab extends Phaser.GameObjects.Container {
 		// pointsCounter_health
 		const pointsCounter_health = scene.add.bitmapText(201, 75, "hyperdrive", "0");
 		pointsCounter_health.setOrigin(0.5, 0.5);
+		pointsCounter_health.visible = false;
 		pointsCounter_health.tintFill = true;
 		pointsCounter_health.tintTopLeft = 8504341;
 		pointsCounter_health.tintTopRight = 8504341;
@@ -216,6 +227,7 @@ export default class UILayerPrefab extends Phaser.GameObjects.Container {
 
 		// text_7
 		const text_7 = scene.add.text(15, 76, "", {});
+		text_7.visible = false;
 		text_7.text = "saude";
 		text_7.setStyle({ "fontSize": "40px" });
 		this.add(text_7);

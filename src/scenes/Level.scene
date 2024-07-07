@@ -146,62 +146,18 @@
             ]
         },
         {
-            "type": "Rectangle",
-            "id": "21a115c6-e472-4903-bb2b-58cfd91779f5",
-            "label": "decisao_fundo",
-            "x": 962,
-            "y": 544,
-            "scaleX": 4.212742875775465,
-            "scaleY": 2.8391363745211793,
-            "isFilled": true,
-            "fillAlpha": 0.7,
-            "width": 125,
-            "height": 178
-        },
-        {
-            "type": "Text",
-            "id": "56040518-c6a6-4149-8512-a288dd5091f1",
-            "label": "decisao_titulo",
-            "x": 698,
-            "y": 296,
-            "fixedWidth": 531,
-            "fixedHeight": 100,
-            "align": "center",
-            "fontSize": "40px",
-            "color": "#000000ff",
-            "wordWrapWidth": 531,
-            "list": [
-                {
-                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
-                    "id": "e1f03093-4675-43f7-aebf-cedd7532b6f2",
-                    "unlock": [
-                        "eventName",
-                        "eventEmitter"
-                    ],
-                    "label": "onUpdateCard",
-                    "eventName": "update-card-title",
-                    "eventEmitter": "scene.events",
-                    "list": [
-                        {
-                            "prefabId": "bfbbe5ee-7aa2-4f38-9b31-777c6df483d3",
-                            "id": "ff9a1c17-d68e-43c9-8555-59c0c9286c40",
-                            "label": "updateTextAction"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "type": "Text",
             "id": "13010f7f-71fa-4b8f-9147-8e5cfc2ddd27",
             "label": "decisao_texto",
-            "x": 713,
-            "y": 404,
+            "x": 807,
+            "y": 425,
+            "scaleX": 0.591600758529093,
+            "scaleY": 0.6135857060686354,
             "fixedWidth": 511,
             "fixedHeight": 384,
             "align": "justify",
-            "fontSize": "25px",
-            "color": "#000000ff",
+            "fontSize": "40px",
+            "color": "#ffffffff",
             "wordWrapWidth": 511,
             "list": [
                 {

@@ -1,4 +1,4 @@
-import Star from "../prefabs/Star";
+import { GameSounds } from "../GameSounds";
 
 
 /* START OF COMPILED CODE */
@@ -11,8 +11,6 @@ import { OnEventScript } from "@phaserjs/editor-scripts-core";
 import UpdateTextAction from "../script-nodes/gameplay/UpdateTextAction";
 import GameplayScript from "../script-nodes/gameplay/GameplayScript";
 import TextureInfoScript from "../script-nodes/gameplay/TextureInfoScript";
-import { GameSounds } from "../GameSounds";
-
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -71,27 +69,11 @@ export default class Level extends Phaser.Scene {
 		// updateTextAction_2
 		new UpdateTextAction(onEventScript);
 
-		// decisao_fundo
-		const decisao_fundo = this.add.rectangle(962, 544, 125, 178);
-		decisao_fundo.scaleX = 4.212742875775465;
-		decisao_fundo.scaleY = 2.8391363745211793;
-		decisao_fundo.isFilled = true;
-		decisao_fundo.fillAlpha = 0.7;
-
-		// decisao_titulo
-		const decisao_titulo = this.add.text(698, 296, "", {});
-		decisao_titulo.setStyle({ "align": "center", "color": "#000000ff", "fixedWidth":531,"fixedHeight":100,"fontSize": "40px" });
-		decisao_titulo.setWordWrapWidth(531);
-
-		// onUpdateCard
-		const onUpdateCard = new OnEventScript(decisao_titulo);
-
-		// updateTextAction
-		new UpdateTextAction(onUpdateCard);
-
 		// decisao_texto
-		const decisao_texto = this.add.text(713, 404, "", {});
-		decisao_texto.setStyle({ "align": "justify", "color": "#000000ff", "fixedWidth":511,"fixedHeight":384,"fontSize": "25px" });
+		const decisao_texto = this.add.text(807, 425, "", {});
+		decisao_texto.scaleX = 0.591600758529093;
+		decisao_texto.scaleY = 0.6135857060686354;
+		decisao_texto.setStyle({ "align": "justify", "color": "#ffffffff", "fixedWidth":511,"fixedHeight":384,"fontSize": "40px" });
 		decisao_texto.setWordWrapWidth(511);
 
 		// onUpdateCard_1
@@ -127,10 +109,6 @@ export default class Level extends Phaser.Scene {
 		// onEventScript (prefab fields)
 		onEventScript.eventName = "update-card-option-A-label";
 		onEventScript.eventEmitter = "scene.events";
-
-		// onUpdateCard (prefab fields)
-		onUpdateCard.eventName = "update-card-title";
-		onUpdateCard.eventEmitter = "scene.events";
 
 		// onUpdateCard_1 (prefab fields)
 		onUpdateCard_1.eventName = "update-card-text";
