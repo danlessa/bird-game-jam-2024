@@ -407,7 +407,7 @@ export default class GameplayScript extends ScriptNode {
 	for (let i = 0; i < 16; ++i){
 		this.scene.events.emit("passaro_" + i, false)
 	}
-	var n_passaros = Math.round(this.health / 15)
+	var n_passaros = Math.round(this.health / 8)
 	for (let i = 0; i < n_passaros; ++i){
 		this.scene.events.emit("passaro_" + i, true)
 		console.log("passaro_" + i)
