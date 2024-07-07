@@ -8,6 +8,8 @@ import FloatingObjectScript from "../script-nodes/ui/FloatingObjectScript";
 import OnPointerDownStartSceneScript from "../script-nodes/ui/OnPointerDownStartSceneScript";
 import { OnEventScript } from "@phaserjs/editor-scripts-core";
 import UpdateTextAction from "../script-nodes/gameplay/UpdateTextAction";
+import SetVisibility from "~/script-nodes/gameplay/SetVisibility";
+
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 

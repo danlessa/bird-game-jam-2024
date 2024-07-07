@@ -23,6 +23,37 @@
             "y": 540
         },
         {
+            "type": "Image",
+            "id": "c55b4e17-6649-4ebd-afaa-6f697197c33b",
+            "label": "image_2",
+            "texture": {
+                "key": "cards-defeat"
+            },
+            "x": 960,
+            "y": 540,
+            "visible": false,
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "ec3a20b8-b12b-4079-9a09-b70064676318",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_2",
+                    "eventName": "defeat",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "a7250829-f61d-4407-b646-8f4ad71c725d",
+                            "label": "setVisibility"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "prefabId": "41c20759-6986-420d-b99c-44f4d40b476c",
             "id": "642662fe-e52a-4881-abe5-0b8c437c53fa",
             "unlock": [
@@ -31,7 +62,7 @@
             ],
             "label": "uiLayer",
             "x": 1,
-            "y": 1
+            "y": 2
         },
         {
             "type": "Text",
@@ -150,7 +181,7 @@
             "id": "13010f7f-71fa-4b8f-9147-8e5cfc2ddd27",
             "label": "decisao_texto",
             "x": 807,
-            "y": 425,
+            "y": 424,
             "scaleX": 0.591600758529093,
             "scaleY": 0.6135857060686354,
             "fixedWidth": 511,

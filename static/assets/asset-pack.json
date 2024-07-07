@@ -20,6 +20,11 @@
                 "key": "buttons"
             },
             {
+                "url": "assets/images/level/cards-defeat.png",
+                "type": "image",
+                "key": "cards-defeat"
+            },
+            {
                 "url": "assets/images/welcome/cloud.png",
                 "type": "image",
                 "key": "cloud"

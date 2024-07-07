@@ -260,6 +260,14 @@ export default class GameplayScript extends ScriptNode {
 		else {
 			this.endGame();
 		}
+
+
+		if (card.type == "derrota") {
+			this.scene.events.emit("defeat", true)
+		}
+		else {
+			this.scene.events.emit("defeat", false)
+		}
 	}
 
 	private endGame() {

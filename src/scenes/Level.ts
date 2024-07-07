@@ -4,10 +4,11 @@ import { GameSounds } from "../GameSounds";
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import { OnEventScript } from "@phaserjs/editor-scripts-core";
+import SetVisibility from "../script-nodes/gameplay/SetVisibility";
 import UILayerPrefab from "../prefabs/UILayerPrefab";
 import { OnPointerDownScript } from "@phaserjs/editor-scripts-core";
 import { EmitEventActionScript } from "@phaserjs/editor-scripts-core";
-import { OnEventScript } from "@phaserjs/editor-scripts-core";
 import UpdateTextAction from "../script-nodes/gameplay/UpdateTextAction";
 import GameplayScript from "../script-nodes/gameplay/GameplayScript";
 import TextureInfoScript from "../script-nodes/gameplay/TextureInfoScript";
@@ -29,8 +30,18 @@ export default class Level extends Phaser.Scene {
 		// image_1
 		this.add.image(960, 540, "background");
 
+		// image_2
+		const image_2 = this.add.image(960, 540, "cards-defeat");
+		image_2.visible = false;
+
+		// onEventScript_2
+		const onEventScript_2 = new OnEventScript(image_2);
+
+		// setVisibility
+		new SetVisibility(onEventScript_2);
+
 		// uiLayer
-		const uiLayer = new UILayerPrefab(this, 1, 1);
+		const uiLayer = new UILayerPrefab(this, 1, 2);
 		this.add.existing(uiLayer);
 
 		// text_option_B
@@ -70,7 +81,7 @@ export default class Level extends Phaser.Scene {
 		new UpdateTextAction(onEventScript);
 
 		// decisao_texto
-		const decisao_texto = this.add.text(807, 425, "", {});
+		const decisao_texto = this.add.text(807, 424, "", {});
 		decisao_texto.scaleX = 0.591600758529093;
 		decisao_texto.scaleY = 0.6135857060686354;
 		decisao_texto.setStyle({ "align": "justify", "color": "#ffffffff", "fixedWidth":511,"fixedHeight":384,"fontSize": "40px" });
@@ -93,6 +104,10 @@ export default class Level extends Phaser.Scene {
 
 		// green
 		const green = new TextureInfoScript(gameplayScript.textures);
+
+		// onEventScript_2 (prefab fields)
+		onEventScript_2.eventName = "defeat";
+		onEventScript_2.eventEmitter = "scene.events";
 
 		// emitEventActionScript (prefab fields)
 		emitEventActionScript.eventName = "selectB";
@@ -136,20 +151,20 @@ export default class Level extends Phaser.Scene {
 		GameSounds.init(this);
 		this.editorCreate();
 
-        var config = {
-			key: "tucanoAnimation",
-			frames: this.anims.generateFrameNumbers("spritesheet", {
-			  start: 0,
-			  end: 2,
-			  first: 0
-			}),
-			frameRate: 10,
-			repeat: -1
-		  };
+        // var config = {
+		// 	key: "tucanoAnimation",
+		// 	frames: this.anims.generateFrameNumbers("spritesheet", {
+		// 	  start: 0,
+		// 	  end: 2,
+		// 	  first: 0
+		// 	}),
+		// 	frameRate: 10,
+		// 	repeat: -1
+		//   };
 
-		  this.anims.create(config);
+		//   this.anims.create(config);
 
-		  this.add.sprite(960, 540, "spritesheet").play("tucanoAnimation");
+		//   this.add.sprite(960, 540, "spritesheet").play("tucanoAnimation");
 	}
 
 
