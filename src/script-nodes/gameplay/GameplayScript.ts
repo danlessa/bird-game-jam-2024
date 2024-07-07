@@ -176,7 +176,7 @@ export default class GameplayScript extends ScriptNode {
 					dynamicTyping: true,
 					complete: results => {
 						console.log(results);
-						this.fetched_data = results.data;
+						this.fetched_data = this.shuffleArrayExceptFirst(results.data);
 						this.decision_cards = this.fetched_data.filter((card: any) => card.type == 'decision')
 
 						this.defeat_cards = this.fetched_data.filter((card: any) => card.type == 'defeat')
@@ -414,6 +414,23 @@ export default class GameplayScript extends ScriptNode {
 	}
 
 
+	}
+	private shuffleArrayExceptFirst(array: any) {
+		// Make a copy of the original array to avoid modifying the original
+		const newArray = array.slice();
+		const firstItem = newArray[0];  // Store the first item
+		const remainingArray = newArray.slice(1);  // Remove the first item
+	
+		// Fisher-Yates shuffle algorithm
+		for (let i = remainingArray.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[remainingArray[i], remainingArray[j]] = [remainingArray[j], remainingArray[i]];
+		}
+	
+		// Insert the first item back into the shuffled array
+		remainingArray.unshift(firstItem);
+	
+		return remainingArray;
 	}
 
 	private endGame() {
