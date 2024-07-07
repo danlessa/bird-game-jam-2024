@@ -189,6 +189,7 @@
                     "text": "CAPITAL ACUMULADO",
                     "fontFamily": "Fredoka",
                     "fontSize": "28px",
+                    "fontStyle": "bold",
                     "color": "#29412b"
                 },
                 {

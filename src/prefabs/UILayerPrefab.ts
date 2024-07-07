@@ -72,7 +72,7 @@ export default class UILayerPrefab extends Phaser.GameObjects.Container {
 		// text_1
 		const text_1 = scene.add.text(805, 73, "", {});
 		text_1.text = "CAPITAL ACUMULADO";
-		text_1.setStyle({ "color": "#29412b", "fontFamily": "Fredoka", "fontSize": "28px" });
+		text_1.setStyle({ "color": "#29412b", "fontFamily": "Fredoka", "fontSize": "28px", "fontStyle": "bold" });
 		this.add(text_1);
 
 		// text

@@ -66,7 +66,7 @@ export default class Level extends Phaser.Scene {
 
 		// text_option_B
 		const text_option_B = this.add.text(1294, 452, "", {});
-		text_option_B.setStyle({ "align": "center", "backgroundColor": "", "color": "#29412b", "fixedWidth":189,"fixedHeight":180,"fontFamily": "Fredoka", "fontSize": "28px", "shadow.color": "#fff", "shadow.stroke":true});
+		text_option_B.setStyle({ "align": "center", "backgroundColor": "", "color": "#29412b", "fixedWidth":189,"fixedHeight":180,"fontFamily": "Fredoka", "fontSize": "24px", "shadow.color": "#fff", "shadow.stroke":true});
 		text_option_B.setPadding({"bottom":10});
 		text_option_B.setWordWrapWidth(185);
 
@@ -84,7 +84,7 @@ export default class Level extends Phaser.Scene {
 
 		// text_option_A
 		const text_option_A = this.add.text(440, 452, "", {});
-		text_option_A.setStyle({ "align": "center", "backgroundColor": "", "color": "#29412b", "fixedWidth":190,"fixedHeight":178,"fontFamily": "Fredoka", "fontSize": "28px" });
+		text_option_A.setStyle({ "align": "center", "backgroundColor": "", "color": "#29412b", "fixedWidth":190,"fixedHeight":178,"fontFamily": "Fredoka", "fontSize": "24px" });
 		text_option_A.setWordWrapWidth(190);
 
 		// onPointerDownScript_1
@@ -103,7 +103,7 @@ export default class Level extends Phaser.Scene {
 		const decisao_texto = this.add.text(822, 402, "", {});
 		decisao_texto.scaleX = 0.591600758529093;
 		decisao_texto.scaleY = 0.6135857060686354;
-		decisao_texto.setStyle({ "align": "center", "color": "#29412b", "fixedWidth":473,"fixedHeight":458,"fontFamily": "Fredoka", "fontSize": "28px" });
+		decisao_texto.setStyle({ "align": "center", "color": "#29412b", "fixedWidth":473,"fixedHeight":458,"fontFamily": "Fredoka", "fontSize": "32px" });
 		decisao_texto.setWordWrapWidth(460);
 
 		// onUpdateCard_1
