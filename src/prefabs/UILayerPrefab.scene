@@ -27,6 +27,7 @@
                     },
                     "x": 1781,
                     "y": 116,
+                    "visible": false,
                     "list": [
                         {
                             "prefabId": "1de438d1-5401-42d3-a8b0-adda8fc8c320",
@@ -124,21 +125,21 @@
                     ]
                 },
                 {
-                    "type": "BitmapText",
+                    "type": "Text",
                     "id": "f636403a-ddc2-4ebb-ba33-c8df16646ffe",
                     "label": "pointsCounter_money",
-                    "x": 200,
-                    "y": 87,
+                    "x": 1026,
+                    "y": 123,
                     "originX": 0.5,
                     "originY": 0.5,
-                    "tintTopLeft": "#81c415",
-                    "tintTopRight": "#81c415",
+                    "tintTopLeft": "",
+                    "tintTopRight": "",
                     "tintBottomLeft": "#e1b14b",
                     "tintBottomRight": "#e1b14b",
-                    "tintFill": true,
                     "text": "0",
-                    "font": "hyperdrive",
-                    "fontSize": 100,
+                    "fixedWidth": 300,
+                    "align": "right",
+                    "fontSize": "100px",
                     "list": [
                         {
                             "prefabId": "1de438d1-5401-42d3-a8b0-adda8fc8c320",
@@ -181,8 +182,8 @@
                     "type": "Text",
                     "id": "73d0fd9d-cb4f-4130-9903-7cd7a65734cc",
                     "label": "text_1",
-                    "x": 43,
-                    "y": 48,
+                    "x": 805,
+                    "y": 73,
                     "text": "$",
                     "fontSize": "100px"
                 },

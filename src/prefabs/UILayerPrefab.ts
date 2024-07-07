@@ -18,6 +18,7 @@ export default class UILayerPrefab extends Phaser.GameObjects.Container {
 
 		// homeButton
 		const homeButton = scene.add.image(1781, 116, "buttons", "Button Pack - Green_Button Green - Home.png");
+		homeButton.visible = false;
 		this.add(homeButton);
 
 		// floatingObjectScript_1
@@ -49,15 +50,14 @@ export default class UILayerPrefab extends Phaser.GameObjects.Container {
 		new UpdateTextAction(onUpdatePoints);
 
 		// pointsCounter_money
-		const pointsCounter_money = scene.add.bitmapText(200, 87, "hyperdrive", "0");
+		const pointsCounter_money = scene.add.text(1026, 123, "", {});
 		pointsCounter_money.setOrigin(0.5, 0.5);
-		pointsCounter_money.tintFill = true;
-		pointsCounter_money.tintTopLeft = 8504341;
-		pointsCounter_money.tintTopRight = 8504341;
+		pointsCounter_money.tintTopLeft = 16777215;
+		pointsCounter_money.tintTopRight = 16777215;
 		pointsCounter_money.tintBottomLeft = 14790987;
 		pointsCounter_money.tintBottomRight = 14790987;
 		pointsCounter_money.text = "0";
-		pointsCounter_money.fontSize = 100;
+		pointsCounter_money.setStyle({ "align": "right", "fixedWidth":300,"fontSize": "100px" });
 		this.add(pointsCounter_money);
 
 		// floatingObjectScript
@@ -70,7 +70,7 @@ export default class UILayerPrefab extends Phaser.GameObjects.Container {
 		new UpdateTextAction(onUpdatePoints_1);
 
 		// text_1
-		const text_1 = scene.add.text(43, 48, "", {});
+		const text_1 = scene.add.text(805, 73, "", {});
 		text_1.text = "$";
 		text_1.setStyle({ "fontSize": "100px" });
 		this.add(text_1);

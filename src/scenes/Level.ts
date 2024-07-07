@@ -135,7 +135,23 @@ export default class Level extends Phaser.Scene {
 		this.id++;
 		GameSounds.init(this);
 		this.editorCreate();
+
+        var config = {
+			key: "tucanoAnimation",
+			frames: this.anims.generateFrameNumbers("spritesheet", {
+			  start: 0,
+			  end: 2,
+			  first: 0
+			}),
+			frameRate: 10,
+			repeat: -1
+		  };
+
+		  this.anims.create(config);
+
+		  this.add.sprite(960, 540, "spritesheet").play("tucanoAnimation");
 	}
+
 
 	/* END-USER-CODE */
 }

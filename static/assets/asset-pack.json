@@ -2,6 +2,11 @@
     "section1": {
         "files": [
             {
+                "url": "assets/images/level/background.png",
+                "type": "image",
+                "key": "background"
+            },
+            {
                 "url": [
                     "assets/audio/bubble.mp3"
                 ],
@@ -20,14 +25,30 @@
                 "key": "cloud"
             },
             {
+                "url": [
+                    "assets/audio/decision.mp3"
+                ],
+                "type": "audio",
+                "key": "decision"
+            },
+            {
                 "url": "assets/images/welcome/decor.png",
                 "type": "image",
                 "key": "decor"
             },
             {
-                "url": "assets/images/level/background.png",
-                "type": "image",
-                "key": "background"
+                "url": [
+                    "assets/audio/event_good.mp3"
+                ],
+                "type": "audio",
+                "key": "event_bad"
+            },
+            {
+                "url": [
+                    "assets/audio/event_bad.mp3"
+                ],
+                "type": "audio",
+                "key": "event_good"
             },
             {
                 "textureURL": "assets/fonts/hyperdrive.png",
@@ -53,27 +74,6 @@
                 "key": "music"
             },
             {
-                "url": [
-                    "assets/audio/event_bad.mp3"
-                ],
-                "type": "audio",
-                "key": "event_good"
-            },
-            {
-                "url": [
-                    "assets/audio/event_good.mp3"
-                ],
-                "type": "audio",
-                "key": "event_bad"
-            },
-            {
-                "url": [
-                    "assets/audio/decision.mp3"
-                ],
-                "type": "audio",
-                "key": "decision"
-            },
-            {
                 "url": "assets/images/welcome/sea.png",
                 "type": "image",
                 "key": "sea"
@@ -82,6 +82,19 @@
                 "url": "assets/images/welcome/sky.png",
                 "type": "image",
                 "key": "sky"
+            },
+            {
+                "url": "assets/animations/spritesheet.png",
+                "frameConfig": {
+                    "frameWidth": 1920,
+                    "frameHeight": 1080,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "spritesheet"
             },
             {
                 "url": "assets/images/items/star-green.png",
@@ -132,11 +145,6 @@
                 "url": "assets/images/level/underwater-8.png",
                 "type": "image",
                 "key": "underwater-8"
-            },
-            {
-                "url": "assets/animations/tucano_1.png",
-                "type": "image",
-                "key": "tucano-1"
             }
         ]
     },
