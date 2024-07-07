@@ -1,4 +1,4 @@
-# Simulador de Herdeiro de Latifúndio
+# EcoHerança
 
 An example game made with Phaser Editor 2D. Based on Phaser 3, Webpack 5, TypeScript, and Phaser Editor 2D v3.
 
