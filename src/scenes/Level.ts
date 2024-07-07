@@ -93,6 +93,24 @@ export default class Level extends Phaser.Scene {
 		// updateTextAction_1
 		new UpdateTextAction(onUpdateCard_1);
 
+		// reiniciar_jogo
+		const reiniciar_jogo = this.add.text(711, 747, "", {});
+		reiniciar_jogo.visible = false;
+		reiniciar_jogo.text = "Reiniciar";
+		reiniciar_jogo.setStyle({ "align": "center", "backgroundColor": "#421a0689", "fixedWidth":500,"fixedHeight":60,"fontSize": "60px" });
+
+		// onEventScript_3
+		const onEventScript_3 = new OnEventScript(reiniciar_jogo);
+
+		// setVisibility_1
+		new SetVisibility(onEventScript_3);
+
+		// onPointerDownScript_2
+		const onPointerDownScript_2 = new OnPointerDownScript(reiniciar_jogo);
+
+		// emitEventActionScript_2
+		const emitEventActionScript_2 = new EmitEventActionScript(onPointerDownScript_2);
+
 		// gameplayScript
 		const gameplayScript = new GameplayScript(this);
 
@@ -128,6 +146,14 @@ export default class Level extends Phaser.Scene {
 		// onUpdateCard_1 (prefab fields)
 		onUpdateCard_1.eventName = "update-card-text";
 		onUpdateCard_1.eventEmitter = "scene.events";
+
+		// onEventScript_3 (prefab fields)
+		onEventScript_3.eventName = "defeat";
+		onEventScript_3.eventEmitter = "scene.events";
+
+		// emitEventActionScript_2 (prefab fields)
+		emitEventActionScript_2.eventName = "reset";
+		emitEventActionScript_2.eventEmitter = "scene.events";
 
 		// yellow (prefab fields)
 		yellow.texture = {"key":"star-yellow"};

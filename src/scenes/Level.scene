@@ -212,6 +212,58 @@
             ]
         },
         {
+            "type": "Text",
+            "id": "5380e057-1530-4a25-8300-3811d583b80d",
+            "label": "reiniciar_jogo",
+            "x": 711,
+            "y": 747,
+            "visible": false,
+            "text": "Reiniciar",
+            "fixedWidth": 500,
+            "fixedHeight": 60,
+            "align": "center",
+            "fontSize": "60px",
+            "backgroundColor": "#421a0689",
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "e4162b39-5d21-4062-b401-2e85c5579b6c",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_3",
+                    "eventName": "defeat",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "72ae2b7d-ec41-4a1c-8527-c1bc981e7dc7",
+                            "label": "setVisibility_1"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                    "id": "6add0518-ae83-4bad-be7d-0e7efffa0f7f",
+                    "label": "onPointerDownScript_2",
+                    "list": [
+                        {
+                            "prefabId": "757fdd95-b5cc-4c5b-adef-a26b5965d851",
+                            "id": "bcaa3eba-751c-4ef2-b0f0-9e6f1174ee0e",
+                            "unlock": [
+                                "eventName",
+                                "eventEmitter"
+                            ],
+                            "label": "emitEventActionScript_2",
+                            "eventName": "reset",
+                            "eventEmitter": "scene.events"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "prefabId": "d8801a27-29ff-4774-a8a6-1f4e9b14d6cc",
             "id": "789d2f54-a153-406e-a5e6-cf5e700681e3",
             "label": "gameplayScript",

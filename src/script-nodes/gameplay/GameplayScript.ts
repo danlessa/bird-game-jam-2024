@@ -87,6 +87,7 @@ export default class GameplayScript extends ScriptNode {
 	private option_B_influence_militia = 0.0;
 	private option_B_influence_crypto = 0.0;
 	private option_B_influence_state = 0.0;
+	private card_type = "";
 
 
 
@@ -114,6 +115,7 @@ export default class GameplayScript extends ScriptNode {
 			delay: 2000,
 			callback: () => {
 				this.scene.events.addListener('drawCard', this.drawCard, this)
+				this.scene.events.addListener('reset', this.reset, this)
 				this.scene.events.addListener('selectA', this.select_option_A, this)
 				this.scene.events.addListener('selectB', this.select_option_B, this)
 				this.scene.time.addEvent({
@@ -128,17 +130,52 @@ export default class GameplayScript extends ScriptNode {
 		//this.nextDifficultyLevel();
 	}
 
+	private reset() {
+		this.decision_title = "";
+		this.decision_text = "";
+		this.decision_option_A_label = "";
+		this.decision_option_B_label = "";
+		this.decision_option_A_text = "";
+		this.decision_option_B_text = "";
+
+		this.card_sequence = 0;
+
+		this.health = 0.0;
+		this.money = 0.0;
+		this.influence_environmentalists = 0.0;
+		this.influence_militia = 0.0;
+		this.influence_crypto = 0.0;
+		this.influence_state = 0.0;
+
+		this.option_A_health = 0.0;
+		this.option_A_money = 0.0;
+		this.option_A_influence_environmentalists = 0.0;
+		this.option_A_influence_militia = 0.0;
+		this.option_A_influence_crypto = 0.0;
+		this.option_A_influence_state = 0.0;
+
+		this.option_B_health = 0.0;
+		this.option_B_money = 0.0;
+		this.option_B_influence_environmentalists = -0.0;
+		this.option_B_influence_militia = 0.0;
+		this.option_B_influence_crypto = 0.0;
+		this.option_B_influence_state = 0.0;
+
+		this.drawCard();
+	}
+
 	private async fetchCards() {
 
 		var handleResponse = (csvText: string) => {
-			let sheetObjects = Papa.parse(csvText, 
-				{header: true, skipEmptyLines: true,
+			let sheetObjects = Papa.parse(csvText,
+				{
+					header: true, skipEmptyLines: true,
 					dynamicTyping: true,
 					complete: results => {
 						console.log(results);
 						this.fetched_data = results.data;
-				}
-			}); 
+					}
+				});
 		};
 
 		var csvToObjects = (csv: string) => {
@@ -149,13 +186,13 @@ export default class GameplayScript extends ScriptNode {
 				let thisObject: any = {};
 				let row = csvSplit(csvRows[i]);
 				for (let j = 0, max = row.length; j < max; j++) {
-				thisObject[propertyNames[j]] = row[j];
-				// BELOW 4 LINES WILL CONVERT DATES IN THE "ENROLLED" COLUMN TO JS DATE OBJECTS
-				// if (propertyNames[j] === "Enrolled") {
-				//   thisObject[propertyNames[j]] = new Date(row[j]);
-				// } else {
-				//   thisObject[propertyNames[j]] = row[j];
-				// }
+					thisObject[propertyNames[j]] = row[j];
+					// BELOW 4 LINES WILL CONVERT DATES IN THE "ENROLLED" COLUMN TO JS DATE OBJECTS
+					// if (propertyNames[j] === "Enrolled") {
+					//   thisObject[propertyNames[j]] = new Date(row[j]);
+					// } else {
+					//   thisObject[propertyNames[j]] = row[j];
+					// }
 				}
 				objects.push(thisObject);
 			}
@@ -173,41 +210,60 @@ export default class GameplayScript extends ScriptNode {
 		const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName}`;
 
 
-		
+
 		return await fetch(sheetURL)
-		.then((response) => response.text())
-		.then((csvText) => handleResponse(csvText));
+			.then((response) => response.text())
+			.then((csvText) => handleResponse(csvText));
 
 	}
 
-	private select_option_A(){
-		GameSounds.playDecision();
-		this.health += this.option_A_health;
-		this.money += this.option_A_money;
-		this.influence_environmentalists += this.option_A_influence_environmentalists;
-		this.influence_crypto += this.option_A_influence_crypto;
-		this.influence_militia += this.option_A_influence_militia;
-		this.influence_state += this.option_A_influence_militia;
-		this.scene.events.emit("update-card-text",  this.decision_option_A_text);
-		this.scene.time.addEvent({
-			delay: 4000,
-			callback: () => this.drawCard()
-		});
+	private select_option_A() {
+
+
+
+		
+
+
+		if (this.card_type == "decision") {
+			GameSounds.playDecision();
+			this.health += this.option_A_health;
+			this.money += this.option_A_money;
+			this.influence_environmentalists += this.option_A_influence_environmentalists;
+			this.influence_crypto += this.option_A_influence_crypto;
+			this.influence_militia += this.option_A_influence_militia;
+			this.influence_state += this.option_A_influence_militia;
+			this.scene.events.emit("update-card-text", this.decision_option_A_text);
+			this.scene.time.addEvent({
+				delay: 4000,
+				callback: () => this.drawCard()
+			});
+		}
+		else if (this.card_type == 'defeat') {
+			GameSounds.playEventBad();
+			//this.reset()
+		}
 	}
 
-	private select_option_B(){
-		GameSounds.playDecision();
-		this.health += this.option_B_health;
-		this.money += this.option_B_money;
-		this.influence_environmentalists += this.option_B_influence_environmentalists;
-		this.influence_crypto += this.option_B_influence_crypto;
-		this.influence_militia += this.option_B_influence_militia;
-		this.influence_state += this.option_B_influence_militia;
-		this.scene.events.emit("update-card-text",  this.decision_option_B_text);
-		this.scene.time.addEvent({
-			delay: 2500,
-			callback: () => this.drawCard()
-		});
+	private select_option_B() {
+
+		if (this.card_type == "decision") {
+			GameSounds.playDecision();
+			this.health += this.option_B_health;
+			this.money += this.option_B_money;
+			this.influence_environmentalists += this.option_B_influence_environmentalists;
+			this.influence_crypto += this.option_B_influence_crypto;
+			this.influence_militia += this.option_B_influence_militia;
+			this.influence_state += this.option_B_influence_militia;
+			this.scene.events.emit("update-card-text", this.decision_option_B_text);
+			this.scene.time.addEvent({
+				delay: 2500,
+				callback: () => this.drawCard()
+			});
+		}
+		else if (this.card_type == 'defeat') {
+			GameSounds.playEventBad();
+			this.reset()
+		}
 	}
 
 	private drawCard() {
@@ -215,8 +271,7 @@ export default class GameplayScript extends ScriptNode {
 
 		console.log(this.fetched_data)
 		console.log(this.card_sequence > this.fetched_data.length)
-		if (this.card_sequence < this.fetched_data.length)
-		{
+		if (this.card_sequence < this.fetched_data.length) {
 			var card = this.fetched_data[this.card_sequence];
 			console.log(card)
 			this.decision_title = card.decision_title;
@@ -256,13 +311,14 @@ export default class GameplayScript extends ScriptNode {
 			this.scene.events.emit("update-inf-est", this.influence_state);
 
 			this.card_sequence++;
+			this.card_type = card.type;
 		}
 		else {
 			this.endGame();
 		}
 
 
-		if (card.type == "derrota") {
+		if (this.card_type == "derrota") {
 			this.scene.events.emit("defeat", true)
 		}
 		else {
@@ -271,10 +327,10 @@ export default class GameplayScript extends ScriptNode {
 	}
 
 	private endGame() {
-			this.scene.events.emit("update-card-title", this.decision_title);
-			this.scene.events.emit("update-card-text", this.decision_text);
-			this.scene.events.emit("update-card-option-A-label", this.decision_option_A_label);
-			this.scene.events.emit("update-card-option-B-label", this.decision_option_B_label);
+		this.scene.events.emit("update-card-title", this.decision_title);
+		this.scene.events.emit("update-card-text", this.decision_text);
+		this.scene.events.emit("update-card-option-A-label", this.decision_option_A_label);
+		this.scene.events.emit("update-card-option-B-label", this.decision_option_B_label);
 	}
 
 	private nextDifficultyLevel() {
@@ -285,7 +341,7 @@ export default class GameplayScript extends ScriptNode {
 		}
 
 		this._baseGravity += 50;
-		this._maxSpawnDelay =  Math.max(this._maxSpawnDelay - 100, 0);
+		this._maxSpawnDelay = Math.max(this._maxSpawnDelay - 100, 0);
 
 		this.scene.time.addEvent({
 			delay: 2000,
