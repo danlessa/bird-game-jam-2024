@@ -20,9 +20,19 @@
                 "key": "buttons"
             },
             {
+                "url": "assets/images/level/cards-between.png",
+                "type": "image",
+                "key": "cards-between"
+            },
+            {
                 "url": "assets/images/level/cards-defeat.png",
                 "type": "image",
                 "key": "cards-defeat"
+            },
+            {
+                "url": "assets/images/level/cards-victory.png",
+                "type": "image",
+                "key": "cards-victory"
             },
             {
                 "url": "assets/images/welcome/cloud.png",

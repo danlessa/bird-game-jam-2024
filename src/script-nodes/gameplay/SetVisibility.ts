@@ -27,7 +27,13 @@ export default class SetVisibility extends ScriptNode {
 
 	execute(visibility: boolean): void {
 
-		this.gameObject.visible = visibility;
+		if (visibility != false && visibility != true){
+			this.gameObject.visible = !this.gameObject.visible
+		}
+		else{
+			this.gameObject.visible = visibility;
+		}
+		
 	}
 
 	/* END-USER-CODE */

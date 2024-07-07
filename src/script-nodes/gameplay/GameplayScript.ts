@@ -59,6 +59,9 @@ export default class GameplayScript extends ScriptNode {
 
 
 	private fetched_data: any = [];
+	private decision_cards: any = [];
+	private defeat_cards: any = {};
+	private victory_cards: any = {};
 
 	private decision_title = "";
 	private decision_text = "";
@@ -174,6 +177,25 @@ export default class GameplayScript extends ScriptNode {
 					complete: results => {
 						console.log(results);
 						this.fetched_data = results.data;
+						this.decision_cards = this.fetched_data.filter((card: any) => card.type == 'decision')
+
+						this.defeat_cards = this.fetched_data.filter((card: any) => card.type == 'defeat')
+
+						this.defeat_cards = this.defeat_cards.reduce(function(map: any, obj: any) {
+							map[obj.slug] = obj;
+							return map;
+						}, {});
+
+						this.victory_cards = this.fetched_data.filter((card: any) => card.type == 'victory')
+
+						this.victory_cards = this.victory_cards.reduce(function(map: any, obj: any) {
+							map[obj.slug] = obj;
+							return map;
+						}, {});
+
+						console.log(this.decision_cards)
+						console.log(this.defeat_cards)
+						console.log(this.victory_cards)
 					}
 				});
 		};
@@ -219,11 +241,6 @@ export default class GameplayScript extends ScriptNode {
 
 	private select_option_A() {
 
-
-
-		
-
-
 		if (this.card_type == "decision") {
 			GameSounds.playDecision();
 			this.health += this.option_A_health;
@@ -233,10 +250,11 @@ export default class GameplayScript extends ScriptNode {
 			this.influence_militia += this.option_A_influence_militia;
 			this.influence_state += this.option_A_influence_militia;
 			this.scene.events.emit("update-card-text", this.decision_option_A_text);
-			this.scene.time.addEvent({
-				delay: 4000,
-				callback: () => this.drawCard()
-			});
+			this.scene.events.emit("selectOption", true);
+			// this.scene.time.addEvent({
+			// 	delay: 4000,
+			// 	callback: () => this.drawCard()
+			// });
 		}
 		else if (this.card_type == 'defeat') {
 			GameSounds.playEventBad();
@@ -255,10 +273,11 @@ export default class GameplayScript extends ScriptNode {
 			this.influence_militia += this.option_B_influence_militia;
 			this.influence_state += this.option_B_influence_militia;
 			this.scene.events.emit("update-card-text", this.decision_option_B_text);
-			this.scene.time.addEvent({
-				delay: 2500,
-				callback: () => this.drawCard()
-			});
+			this.scene.events.emit("selectOption", true);
+			// this.scene.time.addEvent({
+			// 	delay: 2500,
+			// 	callback: () => this.drawCard()
+			// });
 		}
 		else if (this.card_type == 'defeat') {
 			GameSounds.playEventBad();
@@ -271,8 +290,55 @@ export default class GameplayScript extends ScriptNode {
 
 		console.log(this.fetched_data)
 		console.log(this.card_sequence > this.fetched_data.length)
-		if (this.card_sequence < this.fetched_data.length) {
-			var card = this.fetched_data[this.card_sequence];
+
+		if (this.money < 0) {
+			var card = this.victory_cards["defeat-money"]
+		}
+		else if (this.health < 0) {
+			var card = this.defeat_cards["defeat-health"]
+		}
+		else if (this.health >= 100) {
+			var card = this.victory_cards["victory-health"]
+		}
+		else if (this.money >= 1000) {
+			var card = this.victory_cards["victory-money"]
+		}
+		else if (this.influence_environmentalists > 3) {
+			var card = this.victory_cards["victory-environmentalists"]
+		}
+		else if (this.influence_environmentalists < -3) {
+			var card = this.defeat_cards["defeat-environmentalists"]
+			
+		}
+		else if (this.influence_crypto > 3) {
+			var card = this.victory_cards["victory-crypto"]
+		}
+		else if (this.influence_crypto < -3) {
+			var card = this.defeat_cards["defeat-crypto"]
+			
+		}
+		else if (this.influence_militia > 3) {
+			var card = this.victory_cards["victory-militia"]
+		}
+		else if (this.influence_militia < -3) {
+			var card = this.defeat_cards["defeat-militia"]
+		}
+		else if (this.influence_state > 3) {
+			var card = this.victory_cards["victory-state"]
+		}
+		else if (this.influence_state < -3) {
+			var card = this.defeat_cards["defeat-state"]
+		}
+		else {
+			var card = this.decision_cards[this.card_sequence];
+		}
+
+
+
+
+
+		if (this.card_sequence < this.decision_cards.length) {
+			
 			console.log(card)
 			this.decision_title = card.decision_title;
 			this.decision_text = card.decision_text;
@@ -312,17 +378,22 @@ export default class GameplayScript extends ScriptNode {
 
 			this.card_sequence++;
 			this.card_type = card.type;
+			this.scene.events.emit("between", false)
 		}
 		else {
-			this.endGame();
+			this.scene.events.emit("between", true)
 		}
 
 
-		if (this.card_type == "derrota") {
+		if (this.card_type == "defeat") {
 			this.scene.events.emit("defeat", true)
+		}
+		else if (this.card_type == "victory"){
+			this.scene.events.emit("victory", true)
 		}
 		else {
 			this.scene.events.emit("defeat", false)
+			this.scene.events.emit("false", true)
 		}
 	}
 

@@ -19,7 +19,7 @@
             "texture": {
                 "key": "background"
             },
-            "x": 960,
+            "x": 961,
             "y": 540
         },
         {
@@ -54,6 +54,68 @@
             ]
         },
         {
+            "type": "Image",
+            "id": "11e5c146-e1c6-483c-91b3-dd6e84bf169b",
+            "label": "cards_victory",
+            "texture": {
+                "key": "cards-victory"
+            },
+            "x": 960,
+            "y": 540,
+            "visible": false,
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "119fae84-98a3-4710-8a81-9522fb486504",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_5",
+                    "eventName": "victory",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "a835eb2d-b54e-4886-b982-8e947bedfecd",
+                            "label": "setVisibility_5"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "029091f0-e268-4240-aa5b-4b07eaf0df78",
+            "label": "cards_between",
+            "texture": {
+                "key": "cards-between"
+            },
+            "x": 960,
+            "y": 540,
+            "visible": false,
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "a41d5f44-9ff5-4b36-b820-1cd734e66aa9",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_6",
+                    "eventName": "between",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "996378d6-94dd-4de3-83b8-3d080d344561",
+                            "label": "setVisibility_4"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "prefabId": "41c20759-6986-420d-b99c-44f4d40b476c",
             "id": "642662fe-e52a-4881-abe5-0b8c437c53fa",
             "unlock": [
@@ -62,14 +124,14 @@
             ],
             "label": "uiLayer",
             "x": 1,
-            "y": 2
+            "y": 3
         },
         {
             "type": "Text",
             "id": "50ba1343-d270-40d7-b787-8e70aff6e371",
             "label": "text_option_B",
             "x": 1296,
-            "y": 442,
+            "y": 443,
             "fixedWidth": 180,
             "fixedHeight": 185,
             "paddingLeft": 10,
@@ -126,7 +188,7 @@
             "id": "20e28896-0e2a-44dd-897c-4cd0963852bf",
             "label": "text_option_A",
             "x": 438,
-            "y": 449,
+            "y": 450,
             "fixedWidth": 193,
             "fixedHeight": 180,
             "paddingLeft": 10,
@@ -181,7 +243,7 @@
             "id": "13010f7f-71fa-4b8f-9147-8e5cfc2ddd27",
             "label": "decisao_texto",
             "x": 807,
-            "y": 424,
+            "y": 425,
             "scaleX": 0.591600758529093,
             "scaleY": 0.6135857060686354,
             "fixedWidth": 511,
@@ -215,7 +277,7 @@
             "type": "Text",
             "id": "5380e057-1530-4a25-8300-3811d583b80d",
             "label": "reiniciar_jogo",
-            "x": 711,
+            "x": 712,
             "y": 747,
             "visible": false,
             "text": "Reiniciar",
@@ -258,6 +320,63 @@
                             "label": "emitEventActionScript_2",
                             "eventName": "reset",
                             "eventEmitter": "scene.events"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Text",
+            "id": "badba534-dd5a-44a2-b4f4-3c057838f7b0",
+            "label": "text_8",
+            "x": 713,
+            "y": 273,
+            "visible": false,
+            "text": "Avançar",
+            "fixedWidth": 500,
+            "fixedHeight": 70,
+            "align": "center",
+            "fontSize": "50px",
+            "backgroundColor": "",
+            "list": [
+                {
+                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                    "id": "4750b554-4405-4b60-b5fe-df596b41f845",
+                    "label": "onPointerDownScript_3",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "ded1fdb4-be61-4086-83e8-1af682fcef96",
+                            "label": "setVisibility_2"
+                        },
+                        {
+                            "prefabId": "757fdd95-b5cc-4c5b-adef-a26b5965d851",
+                            "id": "8ac60ae1-3146-49a7-9214-7880a956cc61",
+                            "unlock": [
+                                "eventEmitter",
+                                "eventName"
+                            ],
+                            "label": "emitEventActionScript_3",
+                            "eventName": "drawCard",
+                            "eventEmitter": "scene.events"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "438bfe89-4374-4320-9faf-30916be635d6",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_4",
+                    "eventName": "selectOption",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "fbe81217-0379-4946-8987-b961a30eec9e",
+                            "label": "setVisibility_3"
                         }
                     ]
                 }

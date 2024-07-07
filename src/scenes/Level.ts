@@ -28,7 +28,7 @@ export default class Level extends Phaser.Scene {
 	editorCreate(): void {
 
 		// image_1
-		this.add.image(960, 540, "background");
+		this.add.image(961, 540, "background");
 
 		// image_2
 		const image_2 = this.add.image(960, 540, "cards-defeat");
@@ -40,12 +40,32 @@ export default class Level extends Phaser.Scene {
 		// setVisibility
 		new SetVisibility(onEventScript_2);
 
+		// cards_victory
+		const cards_victory = this.add.image(960, 540, "cards-victory");
+		cards_victory.visible = false;
+
+		// onEventScript_5
+		const onEventScript_5 = new OnEventScript(cards_victory);
+
+		// setVisibility_5
+		new SetVisibility(onEventScript_5);
+
+		// cards_between
+		const cards_between = this.add.image(960, 540, "cards-between");
+		cards_between.visible = false;
+
+		// onEventScript_6
+		const onEventScript_6 = new OnEventScript(cards_between);
+
+		// setVisibility_4
+		new SetVisibility(onEventScript_6);
+
 		// uiLayer
-		const uiLayer = new UILayerPrefab(this, 1, 2);
+		const uiLayer = new UILayerPrefab(this, 1, 3);
 		this.add.existing(uiLayer);
 
 		// text_option_B
-		const text_option_B = this.add.text(1296, 442, "", {});
+		const text_option_B = this.add.text(1296, 443, "", {});
 		text_option_B.setStyle({ "align": "center", "backgroundColor": "", "fixedWidth":180,"fixedHeight":185,"fontSize": "25px", "shadow.color": "#fff", "shadow.stroke":true});
 		text_option_B.setPadding({"left":10,"top":10,"right":10,"bottom":10});
 		text_option_B.setWordWrapWidth(180);
@@ -63,7 +83,7 @@ export default class Level extends Phaser.Scene {
 		new UpdateTextAction(onEventScript_1);
 
 		// text_option_A
-		const text_option_A = this.add.text(438, 449, "", {});
+		const text_option_A = this.add.text(438, 450, "", {});
 		text_option_A.setStyle({ "align": "center", "backgroundColor": "", "fixedWidth":193,"fixedHeight":180,"fontSize": "25px" });
 		text_option_A.setPadding({"left":10,"top":10,"right":10,"bottom":10});
 		text_option_A.setWordWrapWidth(180);
@@ -81,7 +101,7 @@ export default class Level extends Phaser.Scene {
 		new UpdateTextAction(onEventScript);
 
 		// decisao_texto
-		const decisao_texto = this.add.text(807, 424, "", {});
+		const decisao_texto = this.add.text(807, 425, "", {});
 		decisao_texto.scaleX = 0.591600758529093;
 		decisao_texto.scaleY = 0.6135857060686354;
 		decisao_texto.setStyle({ "align": "justify", "color": "#ffffffff", "fixedWidth":511,"fixedHeight":384,"fontSize": "40px" });
@@ -94,7 +114,7 @@ export default class Level extends Phaser.Scene {
 		new UpdateTextAction(onUpdateCard_1);
 
 		// reiniciar_jogo
-		const reiniciar_jogo = this.add.text(711, 747, "", {});
+		const reiniciar_jogo = this.add.text(712, 747, "", {});
 		reiniciar_jogo.visible = false;
 		reiniciar_jogo.text = "Reiniciar";
 		reiniciar_jogo.setStyle({ "align": "center", "backgroundColor": "#421a0689", "fixedWidth":500,"fixedHeight":60,"fontSize": "60px" });
@@ -111,6 +131,27 @@ export default class Level extends Phaser.Scene {
 		// emitEventActionScript_2
 		const emitEventActionScript_2 = new EmitEventActionScript(onPointerDownScript_2);
 
+		// text_8
+		const text_8 = this.add.text(713, 273, "", {});
+		text_8.visible = false;
+		text_8.text = "Avançar";
+		text_8.setStyle({ "align": "center", "backgroundColor": "", "fixedWidth":500,"fixedHeight":70,"fontSize": "50px" });
+
+		// onPointerDownScript_3
+		const onPointerDownScript_3 = new OnPointerDownScript(text_8);
+
+		// setVisibility_2
+		new SetVisibility(onPointerDownScript_3);
+
+		// emitEventActionScript_3
+		const emitEventActionScript_3 = new EmitEventActionScript(onPointerDownScript_3);
+
+		// onEventScript_4
+		const onEventScript_4 = new OnEventScript(text_8);
+
+		// setVisibility_3
+		new SetVisibility(onEventScript_4);
+
 		// gameplayScript
 		const gameplayScript = new GameplayScript(this);
 
@@ -126,6 +167,14 @@ export default class Level extends Phaser.Scene {
 		// onEventScript_2 (prefab fields)
 		onEventScript_2.eventName = "defeat";
 		onEventScript_2.eventEmitter = "scene.events";
+
+		// onEventScript_5 (prefab fields)
+		onEventScript_5.eventName = "victory";
+		onEventScript_5.eventEmitter = "scene.events";
+
+		// onEventScript_6 (prefab fields)
+		onEventScript_6.eventName = "between";
+		onEventScript_6.eventEmitter = "scene.events";
 
 		// emitEventActionScript (prefab fields)
 		emitEventActionScript.eventName = "selectB";
@@ -154,6 +203,14 @@ export default class Level extends Phaser.Scene {
 		// emitEventActionScript_2 (prefab fields)
 		emitEventActionScript_2.eventName = "reset";
 		emitEventActionScript_2.eventEmitter = "scene.events";
+
+		// emitEventActionScript_3 (prefab fields)
+		emitEventActionScript_3.eventName = "drawCard";
+		emitEventActionScript_3.eventEmitter = "scene.events";
+
+		// onEventScript_4 (prefab fields)
+		onEventScript_4.eventName = "selectOption";
+		onEventScript_4.eventEmitter = "scene.events";
 
 		// yellow (prefab fields)
 		yellow.texture = {"key":"star-yellow"};
