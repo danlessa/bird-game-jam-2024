@@ -89,6 +89,76 @@
                 "key": "music"
             },
             {
+                "url": "assets/images/items/passaro_01.png",
+                "type": "image",
+                "key": "passaro_01"
+            },
+            {
+                "url": "assets/images/items/passaro_02.png",
+                "type": "image",
+                "key": "passaro_02"
+            },
+            {
+                "url": "assets/images/items/passaro_03.png",
+                "type": "image",
+                "key": "passaro_03"
+            },
+            {
+                "url": "assets/images/items/passaro_04.png",
+                "type": "image",
+                "key": "passaro_04"
+            },
+            {
+                "url": "assets/images/items/passaro_05.png",
+                "type": "image",
+                "key": "passaro_05"
+            },
+            {
+                "url": "assets/images/items/passaro_06.png",
+                "type": "image",
+                "key": "passaro_06"
+            },
+            {
+                "url": "assets/images/items/passaro_07.png",
+                "type": "image",
+                "key": "passaro_07"
+            },
+            {
+                "url": "assets/images/items/passaro_08.png",
+                "type": "image",
+                "key": "passaro_08"
+            },
+            {
+                "url": "assets/images/items/passaro_09.png",
+                "type": "image",
+                "key": "passaro_09"
+            },
+            {
+                "url": "assets/images/items/passaro_10.png",
+                "type": "image",
+                "key": "passaro_10"
+            },
+            {
+                "url": "assets/images/items/passaro_11.png",
+                "type": "image",
+                "key": "passaro_11"
+            },
+            {
+                "url": "assets/images/items/passaro_12.png",
+                "type": "image",
+                "key": "passaro_12"
+            },
+            {
+                "url": "assets/images/items/passaro_13.png",
+                "type": "image",
+                "key": "passaro_13"
+            },
+            {
+                "url": "assets/images/items/passaro_14.png",
+                "type": "image",
+                "key": "passaro_14"
+            },
+            {
                 "url": "assets/images/welcome/sea.png",
                 "type": "image",
                 "key": "sea"

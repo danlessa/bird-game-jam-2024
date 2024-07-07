@@ -128,8 +128,8 @@
                     "type": "Text",
                     "id": "f636403a-ddc2-4ebb-ba33-c8df16646ffe",
                     "label": "pointsCounter_money",
-                    "x": 1026,
-                    "y": 123,
+                    "x": 952,
+                    "y": 175,
                     "originX": 0.5,
                     "originY": 0.5,
                     "tintTopLeft": "",
@@ -138,8 +138,10 @@
                     "tintBottomRight": "#e1b14b",
                     "text": "0",
                     "fixedWidth": 300,
-                    "align": "right",
-                    "fontSize": "100px",
+                    "align": "center",
+                    "fontFamily": "Fredoka",
+                    "fontSize": "36px",
+                    "color": "#29412b",
                     "list": [
                         {
                             "prefabId": "1de438d1-5401-42d3-a8b0-adda8fc8c320",
@@ -184,8 +186,10 @@
                     "label": "text_1",
                     "x": 805,
                     "y": 73,
-                    "text": "$",
-                    "fontSize": "100px"
+                    "text": "CAPITAL ACUMULADO",
+                    "fontFamily": "Fredoka",
+                    "fontSize": "28px",
+                    "color": "#29412b"
                 },
                 {
                     "type": "Text",

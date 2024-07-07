@@ -403,6 +403,17 @@ export default class GameplayScript extends ScriptNode {
 			this.scene.events.emit("defeat", false)
 			this.scene.events.emit("victory", false)
 		}
+
+	for (let i = 0; i < 16; ++i){
+		this.scene.events.emit("passaro_" + i, false)
+	}
+	var n_passaros = Math.round(this.health / 15)
+	for (let i = 0; i < n_passaros; ++i){
+		this.scene.events.emit("passaro_" + i, true)
+		console.log("passaro_" + i)
+	}
+
+
 	}
 
 	private endGame() {

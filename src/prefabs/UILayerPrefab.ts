@@ -8,8 +8,6 @@ import FloatingObjectScript from "../script-nodes/ui/FloatingObjectScript";
 import OnPointerDownStartSceneScript from "../script-nodes/ui/OnPointerDownStartSceneScript";
 import { OnEventScript } from "@phaserjs/editor-scripts-core";
 import UpdateTextAction from "../script-nodes/gameplay/UpdateTextAction";
-import SetVisibility from "~/script-nodes/gameplay/SetVisibility";
-
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -52,14 +50,14 @@ export default class UILayerPrefab extends Phaser.GameObjects.Container {
 		new UpdateTextAction(onUpdatePoints);
 
 		// pointsCounter_money
-		const pointsCounter_money = scene.add.text(1026, 123, "", {});
+		const pointsCounter_money = scene.add.text(952, 175, "", {});
 		pointsCounter_money.setOrigin(0.5, 0.5);
 		pointsCounter_money.tintTopLeft = 16777215;
 		pointsCounter_money.tintTopRight = 16777215;
 		pointsCounter_money.tintBottomLeft = 14790987;
 		pointsCounter_money.tintBottomRight = 14790987;
 		pointsCounter_money.text = "0";
-		pointsCounter_money.setStyle({ "align": "right", "fixedWidth":300,"fontSize": "100px" });
+		pointsCounter_money.setStyle({ "align": "center", "color": "#29412b", "fixedWidth":300,"fontFamily": "Fredoka", "fontSize": "36px" });
 		this.add(pointsCounter_money);
 
 		// floatingObjectScript
@@ -73,8 +71,8 @@ export default class UILayerPrefab extends Phaser.GameObjects.Container {
 
 		// text_1
 		const text_1 = scene.add.text(805, 73, "", {});
-		text_1.text = "$";
-		text_1.setStyle({ "fontSize": "100px" });
+		text_1.text = "CAPITAL ACUMULADO";
+		text_1.setStyle({ "color": "#29412b", "fontFamily": "Fredoka", "fontSize": "28px" });
 		this.add(text_1);
 
 		// text

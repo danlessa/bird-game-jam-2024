@@ -130,20 +130,19 @@
             "type": "Text",
             "id": "50ba1343-d270-40d7-b787-8e70aff6e371",
             "label": "text_option_B",
-            "x": 1296,
-            "y": 443,
-            "fixedWidth": 180,
-            "fixedHeight": 185,
-            "paddingLeft": 10,
-            "paddingTop": 10,
-            "paddingRight": 10,
+            "x": 1294,
+            "y": 452,
+            "fixedWidth": 189,
+            "fixedHeight": 180,
             "paddingBottom": 10,
             "align": "center",
-            "fontSize": "25px",
+            "fontFamily": "Fredoka",
+            "fontSize": "28px",
+            "color": "#29412b",
             "backgroundColor": "",
             "shadow.stroke": true,
             "shadow.color": "#fff",
-            "wordWrapWidth": 180,
+            "wordWrapWidth": 185,
             "list": [
                 {
                     "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -187,18 +186,16 @@
             "type": "Text",
             "id": "20e28896-0e2a-44dd-897c-4cd0963852bf",
             "label": "text_option_A",
-            "x": 438,
-            "y": 450,
-            "fixedWidth": 193,
-            "fixedHeight": 180,
-            "paddingLeft": 10,
-            "paddingTop": 10,
-            "paddingRight": 10,
-            "paddingBottom": 10,
+            "x": 440,
+            "y": 452,
+            "fixedWidth": 190,
+            "fixedHeight": 178,
             "align": "center",
-            "fontSize": "25px",
+            "fontFamily": "Fredoka",
+            "fontSize": "28px",
+            "color": "#29412b",
             "backgroundColor": "",
-            "wordWrapWidth": 180,
+            "wordWrapWidth": 190,
             "list": [
                 {
                     "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -242,16 +239,17 @@
             "type": "Text",
             "id": "13010f7f-71fa-4b8f-9147-8e5cfc2ddd27",
             "label": "decisao_texto",
-            "x": 807,
-            "y": 425,
+            "x": 822,
+            "y": 402,
             "scaleX": 0.591600758529093,
             "scaleY": 0.6135857060686354,
-            "fixedWidth": 511,
-            "fixedHeight": 384,
-            "align": "justify",
-            "fontSize": "40px",
-            "color": "#ffffffff",
-            "wordWrapWidth": 511,
+            "fixedWidth": 473,
+            "fixedHeight": 458,
+            "align": "center",
+            "fontFamily": "Fredoka",
+            "fontSize": "28px",
+            "color": "#29412b",
+            "wordWrapWidth": 460,
             "list": [
                 {
                     "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
@@ -284,7 +282,9 @@
             "fixedWidth": 500,
             "fixedHeight": 34,
             "align": "center",
+            "fontFamily": "Fredoka",
             "fontSize": "23px",
+            "color": "#29412b",
             "backgroundColor": "#421a0689",
             "list": [
                 {
@@ -330,13 +330,14 @@
             "id": "badba534-dd5a-44a2-b4f4-3c057838f7b0",
             "label": "text_8",
             "x": 713,
-            "y": 273,
+            "y": 766,
             "visible": false,
             "text": "Avançar",
             "fixedWidth": 500,
-            "fixedHeight": 70,
             "align": "center",
-            "fontSize": "50px",
+            "fontFamily": "Fredoka",
+            "fontSize": "28px",
+            "color": "#29412b",
             "backgroundColor": "",
             "list": [
                 {
@@ -377,6 +378,440 @@
                             "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
                             "id": "fbe81217-0379-4946-8987-b961a30eec9e",
                             "label": "setVisibility_3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "6e013627-ac8a-4910-9718-3f37b97fc137",
+            "label": "passaro_01",
+            "texture": {
+                "key": "passaro_01"
+            },
+            "x": 960,
+            "y": 540,
+            "visible": false,
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "2c2f42df-c309-4ec4-ae89-74443e7b64c4",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_7",
+                    "eventName": "passaro_1",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "d682e64d-fa83-4d25-bc3a-8b49f4bca24a",
+                            "label": "setVisibility_6"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "6037d6ce-6b8f-4252-8a3c-05122ced2d4a",
+            "label": "passaro_02",
+            "texture": {
+                "key": "passaro_02"
+            },
+            "x": 960,
+            "y": 540,
+            "visible": false,
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "47a7b212-d48d-4a6d-b2aa-06d5eba2b8e8",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_8",
+                    "eventName": "passaro_2",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "5b370848-669b-462c-98d6-2b8ec97001d1",
+                            "label": "setVisibility_7"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "72131beb-f862-4768-8df1-a66f1a47905a",
+            "label": "passaro_03",
+            "texture": {
+                "key": "passaro_03"
+            },
+            "x": 960,
+            "y": 540,
+            "visible": false,
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "44738b63-5e64-49a6-b6ef-8c0bca3d27d3",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_9",
+                    "eventName": "passaro_3",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "cd8bbac4-3650-4052-a1a9-73ce4f624dc8",
+                            "label": "setVisibility_8"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "38e3b7c1-4dd2-48ac-84e5-2f27e1bc5968",
+            "label": "passaro_04",
+            "texture": {
+                "key": "passaro_04"
+            },
+            "x": 960,
+            "y": 540,
+            "visible": false,
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "4ab2176a-2dc2-4ff3-acf5-47397417b77e",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_10",
+                    "eventName": "passaro_4",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "28856ad7-b12d-4ff2-9238-9f5cfa1043fb",
+                            "label": "setVisibility_9"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "3296afeb-36fe-4a7d-92fd-3babae37e2e9",
+            "label": "passaro_05",
+            "texture": {
+                "key": "passaro_05"
+            },
+            "x": 960,
+            "y": 540,
+            "visible": false,
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "19f787f8-d7fe-44c6-9f1b-c654c81cb226",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_11",
+                    "eventName": "passaro_5",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "c054e3de-112d-4cc0-918b-7201dd2faf94",
+                            "label": "setVisibility_10"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "b05a2e9c-25c1-4ead-84ad-4146790e1ab8",
+            "label": "passaro_06",
+            "texture": {
+                "key": "passaro_06"
+            },
+            "x": 960,
+            "y": 540,
+            "visible": false,
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "6ccf0318-3dfe-42ec-82d4-d4220614126b",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_12",
+                    "eventName": "passaro_6",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "14b32713-2a06-49d8-a2a0-cb3f5dca62f2",
+                            "label": "setVisibility_11"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "bcc39a08-60ec-469d-8b5b-a34a8e24c3d8",
+            "label": "passaro_07",
+            "texture": {
+                "key": "passaro_07"
+            },
+            "x": 960,
+            "y": 540,
+            "visible": false,
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "21db5e3b-b28a-4197-be48-7a299b8128c3",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_13",
+                    "eventName": "passaro_7",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "c3d0e794-d78c-4680-8af6-d7dcc00e1978",
+                            "label": "setVisibility_12"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "43106eb8-a78c-43fb-b4cd-a63915cc2f9c",
+            "label": "passaro_08",
+            "texture": {
+                "key": "passaro_08"
+            },
+            "x": 960,
+            "y": 540,
+            "visible": false,
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "82b0f801-7a12-4889-8d16-9d2652e14d43",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_14",
+                    "eventName": "passaro_8",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "c902f89c-d53b-42e6-8d9f-a22d61ae44f1",
+                            "label": "setVisibility_13"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "a8279f3b-f179-4614-b085-7101ccc6e237",
+            "label": "passaro_09",
+            "texture": {
+                "key": "passaro_09"
+            },
+            "x": 960,
+            "y": 540,
+            "visible": false,
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "a96512b3-d6e6-4df4-9a67-78c419074950",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_15",
+                    "eventName": "passaro_9",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "1154fd3c-2e2f-41ae-a6bf-7aa47e79a672",
+                            "label": "setVisibility_14"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "867c92e2-ef66-4251-8aa8-921deb3cd3b0",
+            "label": "passaro_10",
+            "texture": {
+                "key": "passaro_10"
+            },
+            "x": 960,
+            "y": 540,
+            "visible": false,
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "cca80174-3ccd-4235-b7bf-bf435c2abd74",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_16",
+                    "eventName": "passaro_10",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "47962bfe-0103-40e1-a126-db04bb024c51",
+                            "label": "setVisibility_15"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "23facb30-9090-49c4-b079-92b44f0105c1",
+            "label": "passaro_11",
+            "texture": {
+                "key": "passaro_11"
+            },
+            "x": 960,
+            "y": 540,
+            "visible": false,
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "2f2c7efc-e6cb-42eb-b2cb-88256dc63f05",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_17",
+                    "eventName": "passaro_11",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "b6428dbf-04a4-4a46-bb3e-fedba7ade72f",
+                            "label": "setVisibility_16"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "9455384e-db18-4daf-b04f-0da3cd59f1fc",
+            "label": "passaro_12",
+            "texture": {
+                "key": "passaro_12"
+            },
+            "x": 960,
+            "y": 540,
+            "visible": false,
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "7500cad3-4f50-404c-a8a9-f9d6f4e3dcbf",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_18",
+                    "eventName": "passaro_12",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "3b180317-8066-42e3-9c27-bd6f626247f1",
+                            "label": "setVisibility_17"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "a23af0ab-133e-469c-a71d-d4bd0cdf866d",
+            "label": "passaro_13",
+            "texture": {
+                "key": "passaro_13"
+            },
+            "x": 960,
+            "y": 540,
+            "visible": false,
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "82870dc3-b6ed-43cd-bb4a-acb48d9514f6",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_19",
+                    "eventName": "passaro_13",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "ff2e91e3-494f-4eee-9479-181eee8c951a",
+                            "label": "setVisibility_18"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "2c54212b-e18f-456b-84aa-817178baba80",
+            "label": "passaro_14",
+            "texture": {
+                "key": "passaro_14"
+            },
+            "x": 960,
+            "y": 540,
+            "visible": false,
+            "list": [
+                {
+                    "prefabId": "437c7d1d-12e5-4251-8d72-3ee5abae49d2",
+                    "id": "8d390370-67d8-4c17-b72f-cbb29c150fc3",
+                    "unlock": [
+                        "eventName",
+                        "eventEmitter"
+                    ],
+                    "label": "onEventScript_20",
+                    "eventName": "passaro_14",
+                    "eventEmitter": "scene.events",
+                    "list": [
+                        {
+                            "prefabId": "d6285901-0bd0-4f2b-8657-e8cb01e6c519",
+                            "id": "5b59f700-6ec0-4b2b-a696-35e02f29ef32",
+                            "label": "setVisibility_19"
                         }
                     ]
                 }
